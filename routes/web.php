@@ -17,3 +17,7 @@ Route::get('/', function () {
 
 Route::view('jobsearch','jobsearch')->name('jobsearch');
 Route::view('jobdetails','jobdetails')->name('jobdetails');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
