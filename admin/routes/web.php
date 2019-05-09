@@ -28,12 +28,25 @@ Route::post('/delete-company', 'CompanyController@deleteCompany')->name('company
 
 
 //================================== DepartmentController ===============================
+
 Route::get ('/department-list',     'DepartmentController@departments')      ->name('departments');
 Route::post('/get-department-list', 'DepartmentController@getAllDepartments')->name('department.getAllData');
 Route::post('/insert-department',   'DepartmentController@insertDepartment') ->name('department.insert');
 Route::post('/edit-department',     'DepartmentController@editDepartment')   ->name('department.edit');
 Route::post('/update-department',   'DepartmentController@updateDepartment') ->name('department.update');
 Route::post('/delete-department',   'DepartmentController@deleteDepartment') ->name('department.delete');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//========================== Tender ====================================
+
+Route::get ('/tender-list','TenderController@tenderShow')->name('tender.index');
+Route::post ('/tender-list','TenderController@getAlltenderShow')->name('tender.getAllData');
+Route::post ('/insert-tender','TenderController@insertTender')->name('tender.insert');
+Route::get ('/insert-tender','TenderController@addTender')->name('tender.add');
+
 
 
 
@@ -44,3 +57,4 @@ Route::post('/insert-zone',   'ZoneController@insertZone') ->name('zone.insert')
 Route::post('/edit-zone',     'ZoneController@editZone')   ->name('zone.edit');
 Route::post('/update-zone',   'ZoneController@updateZone') ->name('zone.update');
 Route::post('/delete-zone',   'ZoneController@deleteZone') ->name('zone.delete');
+
