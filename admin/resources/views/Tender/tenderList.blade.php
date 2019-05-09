@@ -95,17 +95,17 @@
                 <div class="col-12 table-responsive">
                     <table id="order-listing" class="table table-bordered">
                         <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Publish Date</th>
-                            <th>Price</th>
-                            <th>Status</th>
-                            <th>Tender Type</th>
-                            <th>Department Type</th>
-                            <th>Actions</th>
-                        </tr>
+                            <tr>
+                                <th>Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Publish Date</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Tender Type</th>
+                                <th>Department Type</th>
+                                <th>Actions</th>
+                            </tr>
                         </thead>
                         <tbody>
 

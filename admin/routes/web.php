@@ -19,12 +19,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //================================== CompanyController ===============================
-Route::get ('/company-list', 'CompanyController@companies')->name('companies');
-Route::post('/get-company-list', 'CompanyController@getAllCompanies')->name('company.getAllData');
-Route::post('/insert-company', 'CompanyController@insertCompany')->name('company.insert');
-Route::post('/edit-company', 'CompanyController@editCompany')->name('company.edit');
-Route::post('/update-company', 'CompanyController@updateCompany')->name('company.update');
-Route::post('/delete-company', 'CompanyController@deleteCompany')->name('company.delete');
+Route::get ('/company-list',     'CompanyController@companies')       ->name('companies');
+Route::post('/get-company-list', 'CompanyController@getAllCompanies') ->name('company.getAllData');
+Route::post('/insert-company',   'CompanyController@insertCompany')   ->name('company.insert');
+Route::post('/edit-company',     'CompanyController@editCompany')     ->name('company.edit');
+Route::post('/update-company',   'CompanyController@updateCompany')   ->name('company.update');
+Route::post('/delete-company',   'CompanyController@deleteCompany')   ->name('company.delete');
 
 
 //================================== DepartmentController ===============================
@@ -42,10 +42,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //========================== Tender ====================================
 
-Route::get ('/tender-list','TenderController@tenderShow')->name('tender.index');
-Route::post ('/tender-list','TenderController@getAlltenderShow')->name('tender.getAllData');
-Route::post ('/insert-tender','TenderController@insertTender')->name('tender.insert');
-Route::get ('/insert-tender','TenderController@addTender')->name('tender.add');
+Route::get ('/tender-list',   'TenderController@tenderShow')      ->name('tender.index');
+Route::post('/tender-list',   'TenderController@getAlltenderShow')->name('tender.getAllData');
+Route::post('/insert-tender', 'TenderController@insertTender')    ->name('tender.insert');
+Route::get ('/insert-tender', 'TenderController@addTender')       ->name('tender.add');
+
+// applied
+Route::get ('/applied-tender-list', 'TenderController@appliedTenderlist')       ->name('tender.applied.list');
+Route::post('/get-applied-tender-list', 'TenderController@getAppliedTenderlist') ->name('tender.applied.list.getAllData');
 
 
 
