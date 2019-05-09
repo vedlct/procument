@@ -34,3 +34,13 @@ Route::post('/insert-department',   'DepartmentController@insertDepartment') ->n
 Route::post('/edit-department',     'DepartmentController@editDepartment')   ->name('department.edit');
 Route::post('/update-department',   'DepartmentController@updateDepartment') ->name('department.update');
 Route::post('/delete-department',   'DepartmentController@deleteDepartment') ->name('department.delete');
+
+
+
+//================================== ZoneController ===============================
+Route::get ('/zone-list',     'ZoneController@zones')      ->name('zones');
+Route::post('/get-zone-list', 'ZoneController@getAllZones')->name('zone.getAllData');
+Route::post('/insert-zone',   'ZoneController@insertZone') ->name('zone.insert');
+Route::post('/edit-zone',     'ZoneController@editZone')   ->name('zone.edit');
+Route::post('/update-zone',   'ZoneController@updateZone') ->name('zone.update');
+Route::post('/delete-zone',   'ZoneController@deleteZone') ->name('zone.delete');
