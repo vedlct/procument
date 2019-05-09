@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Document;
 use App\Status;
 
 use App\Apply;
@@ -55,9 +56,22 @@ class TenderController extends Controller
     public function appliedTenderlist(){
         return view('AppliedTender.appliedList');
     }
+    public function deleteTender(Request $r){
+
+        $tender= Tender::where('tenderId', $r->id)->first();
+
+        $tender->delete();
+
+        Session::flash('message', 'tender Deleted!');
+
+        return back();
+    }
 
     public function insertTender(Request $r)
     {
+
+
+
 
 
         $tender = new Tender();
@@ -74,6 +88,31 @@ class TenderController extends Controller
 
         $tender->save();
 
+        if($r->hasFile('img')){
+
+
+            $images =$r->file('img') ;
+
+
+
+            foreach ($images as $img){
+
+                $tenderDoc=new Document();
+
+                $filename= $tender->tenderId.'tenderFile'.'.'.$img->getClientOriginalExtension();
+
+                $tenderDoc->documentName=$filename;
+                $tenderDoc->fktenderId=$tender->tenderId;
+                $location = public_path('tenderDoc'.'/');
+                $upload_success = $img->move($location, $filename);
+                $tenderDoc->save();
+
+            }
+
+
+        }
+
+
         Session::flash('message', 'New Tender Added!');
 
         return redirect()->route('tender.index');
@@ -82,6 +121,7 @@ class TenderController extends Controller
 
 
     public function getAppliedTenderlist(){
+
         $appliedTender = Apply::select('tender.title','company.name', 'status.statusName', 'department.departmentName', 'apply.*')
                                ->leftJoin('tender', 'tender.tenderId', 'apply.tender_tenderId')
                                ->leftJoin('company', 'company.companyId', 'apply.company_companyId')

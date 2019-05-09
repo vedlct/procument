@@ -24,21 +24,19 @@
 
 
 
-            <form method="post" action="{{ route('tender.insert') }}">
+            <form method="post" enctype="multipart/form-data" action="{{ route('tender.insert') }}">
                 @csrf
 
 
 
-                <div class="row">
-                    <div class="col-md-12">
+
                         <div class="form-group row">
                         <label for="" class="col-sm-2 col-form-label">Title</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="title" placeholder="tender Title" required>
                         </div>
                         </div>
-                    </div>
-                </div>
+
 
                 <div class="row">
                     <div class="col-md-6">
@@ -119,21 +117,33 @@
                             </div>
                         </div>
                     </div>
-
-
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Details</label>
-                            <div class="col-sm-9">
-                                <textarea rows="5" name="details" class="form-control"></textarea>
-                            </div>
+
+                                <label class="col-sm-3 col-form-label">File upload</label>
+
+                                <div class="input-group col-sm-9">
+                                    <input type="file" name="img[]" multiple class="form-control">
+                                    {{--<input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">--}}
+                                    {{--<span class="input-group-append">--}}
+                                            {{--<button class="file-upload-browse btn btn-primary" type="button">Upload</button>--}}
+                                    {{--</span>--}}
+                                </div>
+
                         </div>
                     </div>
 
+
                 </div>
+
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Details</label>
+                    <div class="col-sm-10">
+                        <textarea rows="5" name="details" class="form-control"></textarea>
+                    </div>
+                </div>
+
 
                 <div class="row">
                     <div class="col-md-12">
@@ -164,8 +174,7 @@
             autoclose: true
         });
 
-
-
     </script>
+
 
 @endsection
