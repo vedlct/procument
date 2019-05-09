@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Status;
 use App\Tender;
+use App\TenderType;
 use Illuminate\Http\Request;
 use App\Department;
 
@@ -19,7 +21,7 @@ class TenderController extends Controller
     public function getAlltenderShow(){
 
         $tender = Tender::select('tender.*','tendertype.tenderTypeName','department.departmentName','status.statusName')
-            ->leftJoin('tendertype', 'tendertype.tenderTypeId', '=', 'tender.tenderId')
+            ->leftJoin('tendertype', 'tendertype.tenderTypeId', '=', 'tender.fkTenderTypeId')
             ->leftJoin('department', 'department.departmentId', '=', 'tender.fkdepartmentId')
             ->leftJoin('status', 'status.statusId', '=', 'tender.fkstatusId');
 
@@ -29,12 +31,36 @@ class TenderController extends Controller
     }
     public function addTender(){
 
-
-        return view('Tender.addTender');
+        $tenderType=TenderType::select('tenderTypeId','tenderTypeName')->get();
+        $tenderStatus=Status::select('statusId','statusName')->where('statusType','tender_status')->get();
+        $department=Department::select('departmentId','departmentName')->get();
+        return view('Tender.addTender')
+            ->with('tenderType',$tenderType)
+            ->with('tenderStatus',$tenderStatus)
+            ->with('department',$department);
 
 
     }
-    public function insertTender(){
+    public function insertTender(Request $r){
+
+
+        $tender = new Tender();
+
+        $tender->title = $r->title;
+        $tender->details = $r->details;
+        $tender->startdate = $r->startdate;
+        $tender->enddate = $r->enddate;
+        $tender->published_date = $r->published_date;
+        $tender->fkstatusId = $r->fkstatusId;
+        $tender->price = $r->price;
+        $tender->fkTenderTypeId = $r->fkTenderTypeId;
+        $tender->fkdepartmentId = $r->fkdepartmentId;
+
+        $tender->save();
+
+        Session::flash('message', 'New Tender Added!');
+
+        return redirect()->route('tender.index');
 
 
 

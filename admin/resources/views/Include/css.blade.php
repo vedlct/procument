@@ -10,3 +10,4 @@
 
 
 <link rel="stylesheet" href="{{url('/')}}/public/asset/css/style.css">
+<link href="{{url('public/assets/bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}" rel="stylesheet">
