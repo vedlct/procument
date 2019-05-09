@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Status;
+
+use App\Apply;
+
 use App\Tender;
 use App\TenderType;
 use Illuminate\Http\Request;
@@ -15,21 +19,24 @@ class TenderController extends Controller
 {
     //
     public function tenderShow(){
-
         return view('Tender.tenderList');
     }
     public function getAlltenderShow(){
 
         $tender = Tender::select('tender.*','tendertype.tenderTypeName','department.departmentName','status.statusName')
+
             ->leftJoin('tendertype', 'tendertype.tenderTypeId', '=', 'tender.fkTenderTypeId')
             ->leftJoin('department', 'department.departmentId', '=', 'tender.fkdepartmentId')
             ->leftJoin('status', 'status.statusId', '=', 'tender.fkstatusId');
+
 
         $datatables = Datatables::of($tender);
         return $datatables->make(true);
 
     }
+
     public function addTender(){
+
 
         $tenderType=TenderType::select('tenderTypeId','tenderTypeName')->get();
         $tenderStatus=Status::select('statusId','statusName')->where('statusType','tender_status')->get();
@@ -40,8 +47,17 @@ class TenderController extends Controller
             ->with('department',$department);
 
 
+
     }
-    public function insertTender(Request $r){
+
+
+
+    public function appliedTenderlist(){
+        return view('AppliedTender.appliedList');
+    }
+
+    public function insertTender(Request $r)
+    {
 
 
         $tender = new Tender();
@@ -61,8 +77,19 @@ class TenderController extends Controller
         Session::flash('message', 'New Tender Added!');
 
         return redirect()->route('tender.index');
+    }
 
 
 
+    public function getAppliedTenderlist(){
+        $appliedTender = Apply::select('tender.title','company.name', 'status.statusName', 'department.departmentName', 'apply.*')
+                               ->leftJoin('tender', 'tender.tenderId', 'apply.tender_tenderId')
+                               ->leftJoin('company', 'company.companyId', 'apply.company_companyId')
+                               ->leftJoin('department', 'tender.fkdepartmentId', 'department.departmentId')
+                               ->leftJoin('status', 'tender.fkstatusId', 'status.statusId');
+
+
+        $datatables = Datatables::of($appliedTender);
+        return $datatables->make(true);
     }
 }
