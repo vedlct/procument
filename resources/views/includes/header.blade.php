@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Job Forest</title>
+    <title>E-Tender</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="{{url('public/')}}apple-touch-icon.png">
@@ -59,7 +59,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                        <strong class="jf-logo"><a href="index.html"><img src="{{url('public/')}}/images/logo.png" alt="company logo here"></a></strong>
+                        <strong class="jf-logo"><a href="index.html"><img src="{{url('public/')}}/images/logoo.png" alt="company logo here"></a></strong>
                         <div class="jf-rightarea">
                             <nav id="jf-nav" class="jf-nav navbar-expand-lg navbar-toggleable-sm">
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,35 +68,34 @@
                                 <div class="collapse navbar-collapse jf-navigation" id="navbarNav">
                                     <ul>
                                         <li class="menu-item-has-children page_item_has_children">
-                                            <a href="javascript:void(0);">Jobs<em>Find Tons Of Jobs</em>
-                                            </a>
-                                            <ul class="sub-menu">
+                                            <a href="javascript:void(0);">Tender</a>
+<!--                                            <ul class="sub-menu">
                                                 <li><a href="{{route('jobsearch')}}">job search</a></li>
                                                 <li><a href="{{route('jobdetails')}}">job Details</a></li>
                                                 <li><a href="jobdetailexternallink.html">job detail external link</a></li>
-                                            </ul>
+                                            </ul>-->
                                         </li>
                                         <li class="menu-item-has-children page_item_has_children">
-                                            <a href="javascript:void(0);">Employers<em>Search Employer</em>
+                                            <a href="javascript:void(0);">MyPanel<em></em>
                                             </a>
-                                            <ul class="sub-menu">
+<!--                                            <ul class="sub-menu">
                                                 <li><a href="employersgrid.html">Employers Grid</a></li>
                                                 <li><a href="employerslist.html">Employers List</a></li>
                                                 <li><a href="employersdetails.html">Employers Details</a></li>
-                                            </ul>
+                                            </ul>-->
                                         </li>
                                         <li class="menu-item-has-children page_item_has_children">
                                             <a href="javascript:void(0);">
-                                                Candidates
-                                                <em>Find Proffesionals</em>
+                                                Login
+                                                <em></em>
                                             </a>
-                                            <ul class="sub-menu">
+<!--                                            <ul class="sub-menu">
                                                 <li><a href="candidatesgrid.html">Candidates Grid</a></li>
                                                 <li><a href="candidateslist.html">Candidates List</a></li>
                                                 <li><a href="candidatesdetails.html">Candidates Detail</a></li>
-                                            </ul>
+                                            </ul>-->
                                         </li>
-                                        <li class="menu-item-has-children page_item_has_children">
+<!--                                        <li class="menu-item-has-children page_item_has_children">
                                             <a href="javascript:void(0);" class="jf-menubar">
                                                 <span>More</span>
                                                 <img src="{{url('public/')}}/images/nav-more.png" alt="image description">
@@ -130,7 +129,7 @@
                                                 <li><a href="{{route('register')}}">sign up</a></li>
                                                 <li><a href="comingsoon.html">Coming Soon</a></li>
                                             </ul>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </div>
                             </nav>

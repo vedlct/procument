@@ -1157,10 +1157,10 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 .jf-navigation > ul > li:hover:last-child{
 	background:#fcfcfc;
 }
-.jf-navigation ul li a{
-	color:#324b6e;
-	display: block;
-	padding:23px 30px;
+.jf-navigation ul li a {
+    color: #324b6e;
+    display: block;
+    padding: 31px 37px;
 }
 .jf-navigation ul li a em{
 	color:#767676;
@@ -1568,16 +1568,16 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	list-style-type:none;
 	vertical-align:middle;
 }
-.jf-btnjobtag{
-	color:#fff;
-	float:left;
-	font-size:11px;
-	padding:0 14px;
-	background:#000;
-	line-height:20px;
-	border-radius:50px;
-	display:inline-block;
-	vertical-align:middle;
+.jf-btnjobtag {
+    color: #fff;
+    float: left;
+    font-size: 13px;
+    padding: 2px 15px;
+    background: #00CC67;
+    line-height: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    vertical-align: middle;
 }
 .jf-btnjobtags li .jf-btnjobtag{
 	font-size:12px;
