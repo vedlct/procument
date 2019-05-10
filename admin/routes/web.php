@@ -18,6 +18,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//================================== DashboardController ===============================
+Route::get ('/dashboard',                     'DashboardController@dashboard')        ->name('tender.applied.list.today');
+Route::post('/get-applied-tender-list-today', 'DashboardController@getAppliedTenderlist')     ->name('tender.applied.list.getAllData.today');
+
+
+
+
+
+
 //================================== CompanyController ===============================
 Route::get ('/company-list',     'CompanyController@companies')       ->name('companies');
 Route::post('/get-company-list', 'CompanyController@getAllCompanies') ->name('company.getAllData');
@@ -43,16 +52,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //========================== Tender ====================================
 
-Route::get ('/tender-list',   'TenderController@tenderShow')      ->name('tender.index');
-Route::post('/tender-list',   'TenderController@getAlltenderShow')->name('tender.getAllData');
-Route::post('/insert-tender', 'TenderController@insertTender')    ->name('tender.insert');
-Route::get ('/insert-tender', 'TenderController@addTender')       ->name('tender.add');
+Route::get ('/tender-list',     'TenderController@tenderShow')      ->name('tender.index');
+Route::post('/tender-list',     'TenderController@getAlltenderShow')->name('tender.getAllData');
+Route::post('/insert-tender',   'TenderController@insertTender')    ->name('tender.insert');
+Route::get ('/insert-tender',   'TenderController@addTender')       ->name('tender.add');
 Route::post('/delete-tender',   'TenderController@deleteTender') ->name('tender.delete');
 Route::post('/update-tender',   'TenderController@updateTender') ->name('tender.update');
 Route::get('/edit-tender/{tenderId}',     'TenderController@editTender')   ->name('tender.edit');
 
 // applied
-Route::get ('/applied-tender-list', 'TenderController@appliedTenderlist')        ->name('tender.applied.list');
+Route::get ('/applied-tender-list',     'TenderController@appliedTenderlist')        ->name('tender.applied.list');
 Route::post('/get-applied-tender-list', 'TenderController@getAppliedTenderlist') ->name('tender.applied.list.getAllData');
 
 

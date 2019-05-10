@@ -1,5 +1,6 @@
 
 <link rel="stylesheet" href="{{url('/')}}/public/asset/vendors/iconfonts/simple-line-icon/css/simple-line-icons.css">
+<link rel="stylesheet" href="{{url('/')}}/public/asset/vendors/iconfonts/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="{{url('/')}}/public/asset/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
 <link rel="stylesheet" href="{{url('/')}}/public/asset/vendors/css/vendor.bundle.base.css">
 <link rel="stylesheet" href="{{url('/')}}/public/asset/vendors/css/vendor.bundle.addons.css">
