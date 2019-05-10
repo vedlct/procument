@@ -1,7 +1,9 @@
 <div class="nav-top flex-grow-1">
     <div class="container d-flex flex-row h-100 align-items-center">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center">
-            <a class="navbar-brand brand-logo" href="index.html"><img src="{{url('/')}}/public/asset/images/logo.svg" alt="logo"/></a>
+            <a class="navbar-brand brand-logo" href="index.html">
+                e-Tender
+            </a>
             <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{url('/')}}/public/asset/images/logo-mini.svg" alt="logo"/></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between flex-grow-1">
@@ -152,7 +154,7 @@
                 </li>
                 <li class="nav-item nav-profile dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                        <img src="{{url('/')}}/public/asset/images/faces/face4.jpg" alt="profile"/>
+                        {{--<img src="{{url('/')}}/public/asset/images/faces/face4.jpg" alt="profile"/>--}}
                         <span class="nav-profile-name">Mittie McLaughlin</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">

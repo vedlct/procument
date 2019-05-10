@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="852cd603-71f5-4b6f-adb8-8d8236bb7b42" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/resources/views/Include/top_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/resources/views/Include/top_nav.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,59 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/resources/views/Include/bottom_nav.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4439">
-              <caret line="193" column="35" selection-start-line="193" selection-start-column="35" selection-end-line="193" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/resources/views/Dashboard/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2185">
-              <caret line="95" selection-start-line="95" selection-end-line="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/Auth/LoginController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="21" column="76" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/DashboardController.php">
+        <entry file="file://$PROJECT_DIR$/admin/resources/views/Include/top_nav.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#40#54#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/TenderController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" selection-start-line="15" selection-end-line="16" selection-end-column="12" />
+            <state relative-caret-position="230">
+              <caret line="157" column="79" lean-forward="true" selection-start-line="157" selection-start-column="79" selection-end-line="157" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -81,11 +33,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/admin/resources/views/Include/css.blade.php" />
-        <option value="$PROJECT_DIR$/admin/resources/views/Include/bottom_nav.blade.php" />
         <option value="$PROJECT_DIR$/admin/resources/views/Dashboard/index.blade.php" />
         <option value="$PROJECT_DIR$/admin/app/Http/Controllers/Auth/LoginController.php" />
-        <option value="$PROJECT_DIR$/admin/routes/web.php" />
         <option value="$PROJECT_DIR$/admin/app/Http/Controllers/DashboardController.php" />
+        <option value="$PROJECT_DIR$/admin/routes/web.php" />
+        <option value="$PROJECT_DIR$/admin/resources/views/Include/bottom_nav.blade.php" />
+        <option value="$PROJECT_DIR$/admin/resources/views/Include/top_nav.blade.php" />
       </list>
     </option>
   </component>
@@ -137,15 +90,6 @@
               <item name="procurement" type="b2602c69:ProjectViewProjectNode" />
               <item name="procurement" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="procurement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="procurement" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -161,23 +105,7 @@
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="AppliedTender" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="procurement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="procurement" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="procurement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="procurement" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Department" type="462c0819:PsiDirectoryNode" />
+              <item name="Include" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="procurement" type="b2602c69:ProjectViewProjectNode" />
@@ -221,12 +149,12 @@
       <option name="presentableId" value="Default" />
       <updated>1557467627082</updated>
       <workItem from="1557467630483" duration="1892000" />
-      <workItem from="1557469572002" duration="650000" />
+      <workItem from="1557469572002" duration="1772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2542000" />
+    <option name="totallyTimeSpent" value="3664000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -241,7 +169,7 @@
     <frame x="57" y="27" width="1863" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15299945" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21408916" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -306,34 +234,6 @@
     <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/resources/views/Include/bottom_nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4439">
-          <caret line="193" column="35" selection-start-line="193" selection-start-column="35" selection-end-line="193" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/resources/views/Dashboard/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2185">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/Auth/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="21" column="76" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -348,6 +248,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" selection-start-line="15" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="21" column="103" selection-start-line="21" selection-start-column="94" selection-end-line="21" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/resources/views/Include/bottom_nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/resources/views/Dashboard/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/resources/views/Include/top_nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="157" column="79" lean-forward="true" selection-start-line="157" selection-start-column="79" selection-end-line="157" selection-end-column="79" />
         </state>
       </provider>
     </entry>
