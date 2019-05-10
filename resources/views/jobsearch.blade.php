@@ -95,7 +95,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-6 float-left">
 
-                                <div class="jf-featuredjobs jf-featuredjobsvtwo jf-featuredjobsvthree">
+                                <div class="jf-featuredjobs jf-featuredjobsvtwo jf-featuredjobsvthree" id="tag_container">
                                     @include('productajax')
 
                                 </div>
