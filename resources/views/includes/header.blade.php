@@ -85,7 +85,7 @@
                                             </ul>-->
                                         </li>
                                         <li class="menu-item-has-children page_item_has_children">
-                                            <a href="javascript:void(0);">
+                                            <a href="{{route('login')}}">
                                                 Login
                                                 <em></em>
                                             </a>

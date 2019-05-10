@@ -42,6 +42,42 @@
 
             <div class="row">
                 <div class="col-12 table-responsive">
+                    <div class="row">
+
+                        <div class="form-group col-md-3">
+                            <label>Zones</label>
+                            <select class="form-control" onchange="reloadDatatable()" id="zone">
+                                <option value="">Select Zone</option>
+                                @foreach($zones as $zone)
+                                    <option value="{{$zone->zoneId}}">{{$zone->zoneName}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label>Department</label>
+                            <select class="form-control" onchange="reloadDatatable()" id="department">
+                                <option value="">Select Department</option>
+
+                                @foreach($departments as $department)
+                                    <option value="{{$department->departmentId}}">{{$department->departmentName}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label>Tender Type</label>
+                            <select class="form-control" onchange="reloadDatatable()" id="tenderType">
+                                <option value="">Select Type</option>
+                                @foreach($tenderTypes as $tenderType)
+                                    <option value="{{$tenderType->tenderTypeId}}">{{$tenderType->tenderTypeName}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+
+                    </div>
+
                     <table id="order-listing" class="table table-bordered">
                         <thead>
                         <tr>
@@ -49,8 +85,8 @@
                             <th>Tender Type</th>
                             <th>Company</th>
                             <th>Status</th>
-
-                            <th>Department Type</th>
+                            <th>Department</th>
+                            <th>Zone</th>
                             <th>Apply Date</th>
                             <th>Actions</th>
                         </tr>
@@ -95,6 +131,9 @@
                 "type": "POST",
                 data:function (d){
                     d._token="{{csrf_token()}}";
+                    d.zone=$('#zone').val();
+                    d.department=$('#department').val();
+                    d.tenderType=$('#tenderType').val();
                 },
             },
             columns: [
@@ -103,17 +142,22 @@
                 { data: 'name', name: 'company.name' },
                 { data: 'statusName', name: 'status.statusName' },
                 { data: 'departmentName', name: 'department.departmentName' },
+                { data: 'zoneName', name: 'zone.zoneName' },
                 { data: 'applyDate', name: 'apply.applyDate' },
 
                 { "data": function(data)
                     {
-                        return '<button class="btn btn-success btn-sm mr-2" data-panel-id="'+data.applyId+'" onclick="showApplied(this)"><i class="far fa-eye"></i>Edit</button>'
+                        return '<button class="btn btn-success btn-sm mr-2" data-panel-id="'+data.applyId+'" onclick="showApplied(this)"><i class="far fa-eye"></i>View</button>'
                             // '<button class="btn btn-danger btn-sm" data-panel-id="'+data.applyId+'" onclick="deleteCompany(this)"><i class="fa fa-trash fa-lg"></i>Delete</button>';
                     },
                     "orderable": false, "searchable":false, "name":"selected_rows"
                 },
             ]
         } );
+
+        function reloadDatatable() {
+            dataTable.ajax.reload();
+        }
 
 
         {{--function editCompany(x) {--}}

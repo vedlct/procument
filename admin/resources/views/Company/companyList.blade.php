@@ -82,13 +82,12 @@
                 <div class="col-12 table-responsive">
                     <table id="order-listing" class="table table-bordered table-striped">
                         <thead>
-                        <tr>
-                            {{--<th>Order #</th>--}}
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
+                            <tr>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
                         </thead>
                         <tbody>
 
@@ -136,7 +135,6 @@
                 { data: 'name', name: 'company.name' },
                 { data: 'address', name: 'company.address' },
                 { data: 'statusName', name: 'company.statusName' },
-
 
                 { "data": function(data)
                     {

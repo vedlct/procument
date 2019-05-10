@@ -169,22 +169,17 @@
         } );
 
 
-        function editCompany(x) {
+        function editTender(x) {
             id = $(x).data('panel-id');
 
-            $.ajax({
-                type: 'POST',
-                url: "{!! route('department.edit') !!}",
-                cache: false,
-                data: {
-                    _token: "{{csrf_token()}}",
-                    'id': id,
-                },
-                success: function (data) {
-                    $('#editModalBody').html(data);
-                    $('#editModal').modal('show');
-                }
-            });
+            var url = "{{ route('tender.edit', ':tenderId') }}";
+            url = url.replace(':tenderId', id);
+//            document.location.href=url;
+
+
+            window.location.href = url;
+
+
         }
 
         function deleteTender(x) {

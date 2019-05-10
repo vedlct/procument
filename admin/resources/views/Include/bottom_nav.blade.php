@@ -80,15 +80,29 @@
                     {{--</div>--}}
                 {{--</div>--}}
             {{--</li>--}}
+
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class="link-icon icon-book-open"></i><span class="menu-title">Tenders</span><i class="menu-arrow"></i></a>
+                <div class="submenu">
+                    <ul class="submenu-item">
+                        <li class="nav-item"><a class="nav-link" href="{{ route('tender.add') }}">Add New Tender</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('tender.index') }}">All Tenders</a></li>
+                        {{--<li class="nav-item"><a class="nav-link" href="{{ route('tender.applied.list') }}">Applied Tender</a></li>--}}
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('tender.applied.list') }}" class="nav-link"><i class="link-icon icon-screen-desktop"></i><span class="menu-title">Applied Tender</span></a>
+            </li>
+
             <li class="nav-item">
                 <a href="#" class="nav-link"><i class="link-icon icon-book-open"></i><span class="menu-title">Settings</span><i class="menu-arrow"></i></a>
                 <div class="submenu">
                     <ul class="submenu-item">
                         <li class="nav-item"><a class="nav-link" href="{{ route('companies') }}">Company</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('departments') }}">Department</a></li>
-
-                        <li class="nav-item"><a class="nav-link" href="{{ route('tender.index') }}">Tender</a></li>
-
+{{--                        <li class="nav-item"><a class="nav-link" href="{{ route('tender.index') }}">Tender</a></li>--}}
                         <li class="nav-item"><a class="nav-link" href="{{ route('zones') }}">Zone</a></li>
 
 
@@ -96,15 +110,7 @@
                 </div>
             </li>
 
-            <li class="nav-item">
-                <a href="#" class="nav-link"><i class="link-icon icon-book-open"></i><span class="menu-title">Tender Management</span><i class="menu-arrow"></i></a>
-                <div class="submenu">
-                    <ul class="submenu-item">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('tender.index') }}">Tender</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('tender.applied.list') }}">Applied Tender</a></li>
-                    </ul>
-                </div>
-            </li>
+
 
 
             <li class="nav-item mega-menu">
