@@ -95,19 +95,19 @@ class TenderController extends Controller
 
 
 
-            $i=0;
+
             foreach ($images as $img){
 
                 $tenderDoc=new Document();
 
-                $filename= $tender->tenderId.'_'.$i.'tenderFile'.'.'.$img->getClientOriginalExtension();
+                $filename= $img->getClientOriginalName().'.'.$img->getClientOriginalExtension();
 
                 $tenderDoc->documentName=$filename;
                 $tenderDoc->fktenderId=$tender->tenderId;
                 $location = public_path('tenderDoc'.'/');
                 $upload_success = $img->move($location, $filename);
                 $tenderDoc->save();
-                $i++;
+
 
             }
 
@@ -144,19 +144,18 @@ class TenderController extends Controller
 
 
 
-            $i=0;
+
             foreach ($images as $img){
 
                 $tenderDoc=new Document();
 
-                $filename= $tender->tenderId.'_'.$i.'tenderFile'.'.'.$img->getClientOriginalExtension();
-
+                $filename= $img->getClientOriginalName().'.'.$img->getClientOriginalExtension();
                 $tenderDoc->documentName=$filename;
                 $tenderDoc->fktenderId=$tender->tenderId;
                 $location = public_path('tenderDoc'.'/');
                 $upload_success = $img->move($location, $filename);
                 $tenderDoc->save();
-                $i++;
+
 
             }
 
@@ -164,7 +163,7 @@ class TenderController extends Controller
         }
 
 
-        Session::flash('message', 'New Tender Added!');
+        Session::flash('message', 'Tender updated!');
 
         return redirect()->route('tender.index');
     }
@@ -188,6 +187,7 @@ class TenderController extends Controller
         $tenderType=TenderType::select('tenderTypeId','tenderTypeName')->get();
         $tenderStatus=Status::select('statusId','statusName')->where('statusType','tender_status')->get();
         $department=Department::select('departmentId','departmentName')->get();
+        $tenderDoc=Document::select('*')->where('fktenderId',$tenderId)->get();
 
         $tenderInfo=Tender::leftJoin('tendertype', 'tendertype.tenderTypeId', '=', 'tender.fkTenderTypeId')
             ->leftJoin('department', 'department.departmentId', '=', 'tender.fkdepartmentId')
@@ -198,6 +198,33 @@ class TenderController extends Controller
             ->with('tenderType',$tenderType)
             ->with('tenderStatus',$tenderStatus)
             ->with('tenderInfo',$tenderInfo)
+            ->with('tenderDoc',$tenderDoc)
             ->with('department',$department);
+    }
+    public function deleteTenderDoc($docId){
+
+
+        $fileInfo=Document::findOrfail($docId);
+
+        $Path = public_path('tenderDoc'.'/'.$fileInfo->documentName);
+
+        if (file_exists($Path))
+        {
+            if (unlink($Path)) {
+                Session::flash('message', 'Document Deleted!');
+            } else {
+                Session::flash('message', 'Document could not Deleted ,try again!');
+            }
+        }
+        else
+        {
+            Session::flash('message', 'Document not exist!');
+        }
+
+        $fileInfo->delete();
+
+        return back();
+
+
     }
 }

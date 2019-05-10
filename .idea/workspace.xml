@@ -74,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editTender.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="editTender.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/resources/views/Tender/editTender.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="26" column="93" lean-forward="false" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="93" />
+            <state relative-caret-position="600">
+              <caret line="190" column="227" lean-forward="false" selection-start-line="190" selection-start-column="227" selection-end-line="190" selection-end-column="227" />
               <folding />
             </state>
           </provider>
@@ -104,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TenderController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TenderController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/TenderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-88">
-              <caret line="146" column="12" lean-forward="false" selection-start-line="146" selection-start-column="12" selection-end-line="146" selection-end-column="14" />
+            <state relative-caret-position="732">
+              <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
               <folding>
                 <element signature="e#41#58#0#PHP" expanded="true" />
               </folding>
@@ -119,8 +119,8 @@
       <file leaf-file-name="tenderList.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/resources/views/Tender/tenderList.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="174" column="44" lean-forward="false" selection-start-line="174" selection-start-column="33" selection-end-line="174" selection-end-column="44" />
+            <state relative-caret-position="132">
+              <caret line="162" column="173" lean-forward="true" selection-start-line="162" selection-start-column="28" selection-end-line="162" selection-end-column="173" />
               <folding>
                 <marker date="1557465432761" expanded="false" signature="662:669" ph="×" />
                 <marker date="1557465432761" expanded="false" signature="2664:2677" ph="..." />
@@ -132,8 +132,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="50" column="62" lean-forward="false" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="62" />
+            <state relative-caret-position="578">
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -200,9 +200,9 @@
         <option value="$PROJECT_DIR$/admin/resources/views/Include/css.blade.php" />
         <option value="$PROJECT_DIR$/admin/resources/views/Tender/addTender.blade.php" />
         <option value="$PROJECT_DIR$/admin/resources/views/Tender/tenderList.blade.php" />
-        <option value="$PROJECT_DIR$/admin/resources/views/Tender/editTender.blade.php" />
-        <option value="$PROJECT_DIR$/admin/routes/web.php" />
         <option value="$PROJECT_DIR$/admin/app/Http/Controllers/TenderController.php" />
+        <option value="$PROJECT_DIR$/admin/routes/web.php" />
+        <option value="$PROJECT_DIR$/admin/resources/views/Tender/editTender.blade.php" />
       </list>
     </option>
   </component>
@@ -834,12 +834,12 @@
       <workItem from="1557290792607" duration="15061000" />
       <workItem from="1557377797029" duration="5805000" />
       <workItem from="1557389274034" duration="7924000" />
-      <workItem from="1557464431623" duration="2290000" />
+      <workItem from="1557464431623" duration="4788000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42569000" />
+    <option name="totallyTimeSpent" value="45067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1210,22 +1210,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/resources/views/Tender/editTender.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="26" column="93" lean-forward="false" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="50" column="62" lean-forward="false" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/resources/views/Tender/addTender.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -1236,8 +1220,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/resources/views/Tender/tenderList.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="174" column="44" lean-forward="false" selection-start-line="174" selection-start-column="33" selection-end-line="174" selection-end-column="44" />
+        <state relative-caret-position="132">
+          <caret line="162" column="173" lean-forward="true" selection-start-line="162" selection-start-column="28" selection-end-line="162" selection-end-column="173" />
           <folding>
             <marker date="1557465432761" expanded="false" signature="662:669" ph="×" />
             <marker date="1557465432761" expanded="false" signature="2664:2677" ph="..." />
@@ -1247,11 +1231,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/TenderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="146" column="12" lean-forward="false" selection-start-line="146" selection-start-column="12" selection-end-line="146" selection-end-column="14" />
+        <state relative-caret-position="732">
+          <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
           <folding>
             <element signature="e#41#58#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/resources/views/Tender/editTender.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="190" column="227" lean-forward="false" selection-start-line="190" selection-start-column="227" selection-end-line="190" selection-end-column="227" />
+          <folding />
         </state>
       </provider>
     </entry>
