@@ -15,9 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('jobsearch','jobsearch')->name('jobsearch');
 Route::view('jobdetails','jobdetails')->name('jobdetails');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Register
+Route::post('user/register','UserController@register')->name('user.register');
+
+Route::get('jobsearch','TenderController@getTenders')->name('jobsearch');

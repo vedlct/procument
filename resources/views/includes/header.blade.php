@@ -126,8 +126,8 @@
                                                         <li><a href="successstorylist.html">success story list</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="signin.html">sign in</a></li>
-                                                <li><a href="signup.html">sign up</a></li>
+                                                <li><a href="{{route('login')}}">sign in</a></li>
+                                                <li><a href="{{route('register')}}">sign up</a></li>
                                                 <li><a href="comingsoon.html">Coming Soon</a></li>
                                             </ul>
                                         </li>
