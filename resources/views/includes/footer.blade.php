@@ -3,30 +3,13 @@
   *************************************-->
 <footer id="jf-footer" class="jf-footer jf-haslayout">
     <div class="jf-footeraboutus">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-8 push-md-2 col-lg-8 push-lg-2">
-                    <strong class="jf-logo"><a href="index-2.html"><img src="{{url('public/')}}/images/flogo.png" alt="Footer Logo"></a></strong>
-                    <div class="jf-description">
-                        <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt enimadiume minim veniam quis nostrud exercitation ullamco labois niisie ut <a href="javascript:void(0);">www.jobforest.com</a> commodo consequat aute irure dolor in<br> reprehenderit ineu vluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    <ul class="jf-socialiconssimple">
-                        <li class="jf-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook-f"></i></a></li>
-                        <li class="jf-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
-                        <li class="jf-youtube"><a href="javascript:void(0);"><i class="fab fa-youtube"></i></a></li>
-                        <li class="jf-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li class="jf-bloggerb"><a href="javascript:void(0);"><i class="fab fa-blogger-b"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="jf-footerbottom">
         <a class="jf-btnscrolltop" href="javascript:void(0);"><i class="fa fa-angle-double-up"></i></a>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <p class="jf-copyrights">Copyright © 2019 <span>Job Forest.</span> All Rights Reserved.</p>
+                    <p class="jf-copyrights">Copyright © 2019 <span>E-Tender.</span> All Rights Reserved.</p>
                     <nav class="jf-addnav">
                         <ul>
                             <li><a href="javascript:void(0);">Privacy Policy</a></li>

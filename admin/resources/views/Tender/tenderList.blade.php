@@ -160,8 +160,8 @@
                 { data: 'departmentName', name: 'department.departmentName' },
                 { "data": function(data)
                 {
-                    return '<button class="btn btn-success btn-sm mr-2" data-panel-id="'+data.departmentId+'" onclick="editCompany(this)"><i class="far fa-edit"></i>Edit</button>'+
-                        '<button class="btn btn-danger btn-sm" data-panel-id="'+data.departmentId+'" onclick="deleteCompany(this)"><i class="fa fa-trash fa-lg"></i>Delete</button>';
+                    return '<button class="btn btn-success btn-sm mr-2" data-panel-id="'+data.tenderId+'" onclick="editTender(this)"><i class="far fa-edit"></i>Edit</button>'+
+                        '<button class="btn btn-danger btn-sm" data-panel-id="'+data.tenderId+'" onclick="deleteTender(this)"><i class="fa fa-trash fa-lg"></i>Delete</button>';
                 },
                     "orderable": false, "searchable":false, "name":"selected_rows"
                 },
@@ -169,25 +169,20 @@
         } );
 
 
-        function editCompany(x) {
+        function editTender(x) {
             id = $(x).data('panel-id');
 
-            $.ajax({
-                type: 'POST',
-                url: "{!! route('department.edit') !!}",
-                cache: false,
-                data: {
-                    _token: "{{csrf_token()}}",
-                    'id': id,
-                },
-                success: function (data) {
-                    $('#editModalBody').html(data);
-                    $('#editModal').modal('show');
-                }
-            });
+            var url = "{{ route('tender.edit', ':tenderId') }}";
+            url = url.replace(':tenderId', id);
+//            document.location.href=url;
+
+
+            window.location.href = url;
+
+
         }
 
-        function deleteCompany(x) {
+        function deleteTender(x) {
             btn = $(x).data('panel-id');
             $.confirm({
                 title: 'Confirm!',
@@ -197,7 +192,7 @@
                         // delete
                         $.ajax({
                             type: 'POST',
-                            url: "{!! route('department.delete') !!}",
+                            url: "{!! route('tender.delete') !!}",
                             cache: false,
                             data: {
                                 _token: "{{csrf_token()}}",
@@ -207,7 +202,7 @@
                                 $.alert({
                                     animationBounce: 2,
                                     title: 'Success!',
-                                    content: 'Company Deleted.',
+                                    content: 'Tender Deleted.',
                                 });
                                 dataTable.ajax.reload();
                             }
