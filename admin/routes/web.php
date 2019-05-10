@@ -57,6 +57,8 @@ Route::post('/tender-list',     'TenderController@getAlltenderShow')->name('tend
 Route::post('/insert-tender',   'TenderController@insertTender')    ->name('tender.insert');
 Route::get ('/insert-tender',   'TenderController@addTender')       ->name('tender.add');
 Route::post('/delete-tender',   'TenderController@deleteTender') ->name('tender.delete');
+Route::get('/delete-tender-doc/{docId}',   'TenderController@deleteTenderDoc') ->name('tenderDoc.delete');
+
 Route::post('/update-tender',   'TenderController@updateTender') ->name('tender.update');
 Route::get('/edit-tender/{tenderId}',     'TenderController@editTender')   ->name('tender.edit');
 

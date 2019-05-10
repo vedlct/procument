@@ -154,6 +154,50 @@
 
             </form>
 
+            @if(!$tenderDoc->isEmpty())
+            <br>
+
+            <div class="card">
+
+            <h3 class="card-header">
+                <div class="row">
+                    <div align="center" class="col-md-12">
+                        <span style="display: inline;">Tender Previous Doc</span>
+                    </div>
+
+                </div>
+            </h3>
+
+            <div class="card-body table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <td>
+                            file name
+                        </td>
+                        <td>
+                            Action
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($tenderDoc as $tD)
+                    <tr>
+                        <td>
+                            <a href="{{url('public/tenderDoc'.'/'.$tD->documentName)}}" target="_blank">{{$tD->documentName}}</a>
+                        </td>
+                        <td>
+                            <a href="{{route('tenderDoc.delete',['id'=>$tD->documentId])}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-lg"></i>Delete</a>
+                            <a download href="{{url('public/tenderDoc'.'/'.$tD->documentName)}}" target="_blank" onclick="return confirm('Are you sure?')" class="btn btn-info btn-sm"><i class="fa fa-download fa-lg"></i>Download</a>
+                        </td>
+                    </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+                @endif
+            </div>
+
         </div>
     </div>
 
