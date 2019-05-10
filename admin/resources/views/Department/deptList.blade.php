@@ -114,7 +114,7 @@
             serverSide: true,
             Filter: true,
             stateSave: true,
-            ordering:false,
+            ordering:true,
             type:"POST",
             "ajax":{
                 "url": "{!! route('department.getAllData') !!}",

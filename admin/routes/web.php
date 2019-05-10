@@ -54,7 +54,7 @@ Route::post('/update-tender',   'TenderController@updateTender') ->name('tender.
 Route::get('/edit-tender/{tenderId}',     'TenderController@editTender')   ->name('tender.edit');
 
 // applied
-Route::get ('/applied-tender-list', 'TenderController@appliedTenderlist')       ->name('tender.applied.list');
+Route::get ('/applied-tender-list', 'TenderController@appliedTenderlist')        ->name('tender.applied.list');
 Route::post('/get-applied-tender-list', 'TenderController@getAppliedTenderlist') ->name('tender.applied.list.getAllData');
 
 

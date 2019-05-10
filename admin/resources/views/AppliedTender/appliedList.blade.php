@@ -107,7 +107,7 @@
 
                 { "data": function(data)
                     {
-                        return '<button class="btn btn-success btn-sm mr-2" data-panel-id="'+data.applyId+'" onclick="showApplied(this)"><i class="far fa-eye"></i>Edit</button>'
+                        return '<button class="btn btn-success btn-sm mr-2" data-panel-id="'+data.applyId+'" onclick="showApplied(this)"><i class="far fa-eye"></i>View</button>'
                             // '<button class="btn btn-danger btn-sm" data-panel-id="'+data.applyId+'" onclick="deleteCompany(this)"><i class="fa fa-trash fa-lg"></i>Delete</button>';
                     },
                     "orderable": false, "searchable":false, "name":"selected_rows"
