@@ -19,7 +19,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //================================== DashboardController ===============================
-Route::get ('/dashboard',                     'DashboardController@dashboard')        ->name('tender.applied.list.today');
+Route::get ('/dashboard',                     'DashboardController@dashboard')        ->name('dashboard');
 Route::post('/get-applied-tender-list-today', 'DashboardController@getAppliedTenderlist')     ->name('tender.applied.list.getAllData.today');
 
 

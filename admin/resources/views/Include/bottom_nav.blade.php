@@ -2,7 +2,7 @@
     <div class="container">
         <ul class="nav page-navigation">
             <li class="nav-item">
-                <a href="index.html" class="nav-link"><i class="link-icon icon-screen-desktop"></i><span class="menu-title">Dashboard</span></a>
+                <a href="{{ route('dashboard') }}" class="nav-link"><i class="link-icon icon-screen-desktop"></i><span class="menu-title">Dashboard</span></a>
             </li>
             {{--<li class="nav-item">--}}
                 {{--<a href="pages/widgets.html" class="nav-link"><i class="link-icon icon-disc"></i><span class="menu-title">Settings</span></a>--}}
