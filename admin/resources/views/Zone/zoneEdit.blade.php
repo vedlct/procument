@@ -1,7 +1,7 @@
 
 <form method="post" action="{{ route('zone.update') }}">
     @csrf
-    <input type="hidden" value="{{ $zone->idzone }}" name="id">
+    <input type="hidden" value="{{ $zone->zoneId }}" name="id">
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">

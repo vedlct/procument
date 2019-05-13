@@ -25,11 +25,11 @@ class TenderController extends Controller
     }
     public function getAlltenderShow(){
 
-        $tender = Tender::select('tender.*','tendertype.tenderTypeName','department.departmentName','status.statusName')
-
-            ->leftJoin('tendertype', 'tendertype.tenderTypeId', '=', 'tender.fkTenderTypeId')
-            ->leftJoin('department', 'department.departmentId', '=', 'tender.fkdepartmentId')
-            ->leftJoin('status', 'status.statusId', '=', 'tender.fkstatusId');
+        $tender = Tender::select('tender.*', 'zone.zoneName' ,'tendertype.tenderTypeName','department.departmentName','status.statusName')
+                         ->leftJoin('tendertype', 'tendertype.tenderTypeId', '=', 'tender.fkTenderTypeId')
+                         ->leftJoin('department', 'department.departmentId', '=', 'tender.fkdepartmentId')
+                         ->leftJoin('zone', 'zone.zoneId', '=', 'tender.fkzoneId')
+                         ->leftJoin('status', 'status.statusId', '=', 'tender.fkstatusId');
 
 
         $datatables = Datatables::of($tender);
@@ -38,16 +38,16 @@ class TenderController extends Controller
     }
 
     public function addTender(){
-
-
         $tenderType=TenderType::select('tenderTypeId','tenderTypeName')->get();
         $tenderStatus=Status::select('statusId','statusName')->where('statusType','tender_status')->get();
         $department=Department::select('departmentId','departmentName')->get();
-        return view('Tender.addTender')
-            ->with('tenderType',$tenderType)
-            ->with('tenderStatus',$tenderStatus)
-            ->with('department',$department);
+        $zones=Zone::all();
 
+        return view('Tender.addTender')
+               ->with('tenderType',$tenderType)
+               ->with('tenderStatus',$tenderStatus)
+               ->with('zones',$zones)
+               ->with('department',$department);
 
 
     }
@@ -55,12 +55,9 @@ class TenderController extends Controller
 
 
     public function appliedTenderlist(){
-
         $departments=Department::get();
         $tenderTypes=TenderType::get();
         $zones=Zone::where('fkstatusId',3)->get();
-
-//        return $zones;
 
         return view('AppliedTender.appliedList',compact('departments','tenderTypes','zones'));
     }
@@ -77,13 +74,7 @@ class TenderController extends Controller
 
     public function insertTender(Request $r)
     {
-
-
-
-
-
         $tender = new Tender();
-
         $tender->title = $r->title;
         $tender->details = $r->details;
         $tender->startdate = $r->startdate;
@@ -93,6 +84,7 @@ class TenderController extends Controller
         $tender->price = $r->price;
         $tender->fkTenderTypeId = $r->fkTenderTypeId;
         $tender->fkdepartmentId = $r->fkdepartmentId;
+        $tender->fkzoneId = $r->zone;
 
         $tender->save();
 
@@ -142,6 +134,7 @@ class TenderController extends Controller
         $tender->price = $r->price;
         $tender->fkTenderTypeId = $r->fkTenderTypeId;
         $tender->fkdepartmentId = $r->fkdepartmentId;
+        $tender->fkzoneId = $r->zone;
 
         $tender->save();
 
@@ -209,6 +202,7 @@ class TenderController extends Controller
         $tenderStatus=Status::select('statusId','statusName')->where('statusType','tender_status')->get();
         $department=Department::select('departmentId','departmentName')->get();
         $tenderDoc=Document::select('*')->where('fktenderId',$tenderId)->get();
+        $zones=Zone::all();
 
         $tenderInfo=Tender::leftJoin('tendertype', 'tendertype.tenderTypeId', '=', 'tender.fkTenderTypeId')
             ->leftJoin('department', 'department.departmentId', '=', 'tender.fkdepartmentId')
@@ -220,6 +214,7 @@ class TenderController extends Controller
             ->with('tenderStatus',$tenderStatus)
             ->with('tenderInfo',$tenderInfo)
             ->with('tenderDoc',$tenderDoc)
+            ->with('zones',$zones)
             ->with('department',$department);
     }
     public function deleteTenderDoc($docId){

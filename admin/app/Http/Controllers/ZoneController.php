@@ -34,7 +34,7 @@ class ZoneController extends Controller
 
     public function editZone(Request $r){
         $status = Status::where('statusType', 'zone_status')->get();
-        $zone = Zone::where('idzone', $r->id)->first();
+        $zone = Zone::where('zoneId', $r->id)->first();
 
         return view('Zone.zoneEdit')->with('zone', $zone)
                                          ->with('status', $status);
@@ -52,7 +52,7 @@ class ZoneController extends Controller
     }
 
     public function deleteZone(Request $r){
-        $zone = Zone::where('idzone', $r->id)->first();
+        $zone = Zone::where('zoneId', $r->id)->first();
         $zone->delete();
 
         Session::flash('message', 'Zone Deleted!');

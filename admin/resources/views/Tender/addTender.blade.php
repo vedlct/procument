@@ -28,12 +28,16 @@
                 @csrf
 
 
-                        <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">Title</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="title" placeholder="tender Title" required>
-                        </div>
-                        </div>
+                <div class="form-group row">
+                    <label class="col-sm-1 col-form-label">Title</label>
+
+                    <div class="col-sm-10" style="margin-left: 73px; width: 100%;">
+                        <input type="text" class="form-control" name="title" placeholder="tender Title" required>
+                    </div>
+                </div>
+
+
+
 
 
                 <div class="row">
@@ -73,12 +77,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Status</label>
                             <div class="col-sm-9">
                                 <select required name="fkstatusId" class="form-control">
-                                    <option value="">select Tender Status</option>
+                                    <option value="">Select Tender Status</option>
                                     @foreach($tenderStatus as $tS)
                                         <option value="{{$tS->statusId}}">{{$tS->statusName}}</option>
                                     @endforeach
@@ -86,14 +90,28 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Tender Type</label>
                             <div class="col-sm-9">
                                 <select required name="fkTenderTypeId" class="form-control">
-                                    <option value="">select Tender Type</option>
+                                    <option value="">Select Tender Type</option>
                                     @foreach($tenderType as $tT)
                                         <option value="{{$tT->tenderTypeId}}">{{$tT->tenderTypeName}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Zone</label>
+                            <div class="col-sm-9">
+                                <select name="zone" class="form-control">
+                                    <option value="">Select Zone</option>
+                                    @foreach($zones as $zone)
+                                        <option value="{{$zone->zoneId}}">{{$zone->zoneName}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -107,7 +125,7 @@
                             <label class="col-sm-3 col-form-label">Department</label>
                             <div class="col-sm-9">
                                 <select required name="fkdepartmentId" class="form-control">
-                                    <option value="">select Department</option>
+                                    <option value="">Select Department</option>
                                     @foreach($department as $d)
                                         <option value="{{$d->departmentId}}">{{$d->departmentName}}</option>
                                     @endforeach
@@ -136,8 +154,8 @@
 
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Details</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-1 col-form-label">Details</label>
+                    <div class="col-sm-10" style="margin-left: 73px; width: 100%;">
                         <textarea rows="5" name="details" class="form-control"></textarea>
                     </div>
                 </div>

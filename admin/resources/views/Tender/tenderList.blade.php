@@ -104,6 +104,7 @@
                                 <th>Status</th>
                                 <th>Tender Type</th>
                                 <th>Department Type</th>
+                                <th>Zone</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -158,6 +159,8 @@
                 { data: 'statusName', name: 'status.statusName' },
                 { data: 'tenderTypeName', name: 'tendertype.tenderTypeName' },
                 { data: 'departmentName', name: 'department.departmentName' },
+                { data: 'zoneName', name: 'zone.zoneName' },
+
                 { "data": function(data)
                 {
                     return '<button class="btn btn-success btn-sm mr-2" data-panel-id="'+data.tenderId+'" onclick="editTender(this)"><i class="far fa-edit"></i>Edit</button>'+

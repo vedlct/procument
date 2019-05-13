@@ -142,8 +142,8 @@
                 {
                     "data": function(data)
                     {
-                        return '<button class="btn btn-success btn-sm mr-2" data-panel-id="'+data.idzone+'" onclick="edit_data(this)"><i class="far fa-edit"></i>Edit</button>'+
-                               '<button class="btn btn-danger btn-sm" data-panel-id="'+data.idzone+'" onclick="delete_data(this)"><i class="fa fa-trash fa-lg"></i>Delete</button>';
+                        return '<button class="btn btn-success btn-sm mr-2" data-panel-id="'+data.zoneId+'" onclick="edit_data(this)"><i class="far fa-edit"></i>Edit</button>'+
+                               '<button class="btn btn-danger btn-sm" data-panel-id="'+data.zoneId+'" onclick="delete_data(this)"><i class="fa fa-trash fa-lg"></i>Delete</button>';
                     },
                     "orderable": false, "searchable":false, "name":"selected_rows"
                 },

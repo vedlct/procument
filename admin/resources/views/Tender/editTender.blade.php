@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Status</label>
                             <div class="col-sm-9">
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Tender Type</label>
                             <div class="col-sm-9">
@@ -96,6 +96,20 @@
                                     <option value="">select Tender Type</option>
                                     @foreach($tenderType as $tT)
                                         <option @if($tT->tenderTypeId=$tenderInfo->fkTenderTypeId) selected @endif value="{{$tT->tenderTypeId}}">{{$tT->tenderTypeName}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Zone</label>
+                            <div class="col-sm-9">
+                                <select name="zone" class="form-control">
+                                    <option value="">Select Zone</option>
+                                    @foreach($zones as $zone)
+                                        <option @if($zone->zoneId==$tenderInfo->fkzoneId) selected @endif value="{{$zone->zoneId}}">{{$zone->zoneName}}</option>
                                     @endforeach
                                 </select>
                             </div>

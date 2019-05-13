@@ -139,7 +139,8 @@
                 { "data": function(data)
                     {
                         return '<button class="btn btn-success btn-sm mr-2" data-panel-id="'+data.companyId+'" onclick="editCompany(this)"><i class="far fa-edit"></i>Edit</button>'+
-                               '<button class="btn btn-danger btn-sm" data-panel-id="'+data.companyId+'" onclick="deleteCompany(this)"><i class="fa fa-trash fa-lg"></i>Delete</button>';
+                               '<button class="btn btn-danger btn-sm mr-2" data-panel-id="'+data.companyId+'" onclick="deleteCompany(this)"><i class="fa fa-trash fa-lg"></i>Delete</button>'+
+                               '<button class="btn btn-info btn-sm" data-panel-id="'+data.companyId+'" onclick="contactPersonCompany(this)"><i class="fa fa-user fa-lg"></i>Contact Persons</button>';
                     },
                     "orderable": false, "searchable":false, "name":"selected_rows"
                 },
@@ -197,6 +198,13 @@
                     },
                 }
             });
+        }
+        
+        function contactPersonCompany(x) {
+            btn = $(x).data('panel-id');
+            var url = '{{ route("company.persons.show", ":id") }}';
+            var newUrl=url.replace(':id', btn);
+            window.location.href = newUrl;
         }
 
     </script>

@@ -32,9 +32,9 @@
                             <th>Tender Type</th>
                             <th>Company</th>
                             <th>Status</th>
-
                             <th>Department Type</th>
                             <th>Apply Date</th>
+                            <th>Bid Price</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -83,6 +83,7 @@
                 { data: 'statusName', name: 'status.statusName' },
                 { data: 'departmentName', name: 'department.departmentName' },
                 { data: 'applyDate', name: 'apply.applyDate' },
+                { data: 'price', name: 'apply.price' },
 
                 { "data": function(data)
                     {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\ContactPerson;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use Session;
@@ -55,6 +56,19 @@ class CompanyController extends Controller
         Session::flash('message', 'Company Deleted!');
 
         return back();
+    }
+
+    public function contactPersonsList($id){
+        $company = Company::findOrFail($id);
+
+        return view('Company.companyContactPersons')->with('company', $company);
+    }
+
+    public function getAllContactPersonsList(Request $r){
+        $persons = ContactPerson::where('fkcompanyId', $r->company_id)->get();
+
+        $datatables = Datatables::of($persons);
+        return $datatables->make(true);
     }
 
 }

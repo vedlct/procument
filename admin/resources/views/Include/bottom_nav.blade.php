@@ -106,6 +106,7 @@
                     <ul class="submenu-item">
                         <li class="nav-item"><a class="nav-link" href="{{ route('departments') }}">Department</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('zones') }}">Zone</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('tenderType') }}">Tender Type</a></li>
                     </ul>
                 </div>
             </li>
