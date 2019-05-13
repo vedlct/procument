@@ -87,6 +87,7 @@
                             <th>Status</th>
                             <th>Department</th>
                             <th>Zone</th>
+                            <th>Price</th>
                             <th>Apply Date</th>
                             <th>Actions</th>
                         </tr>
@@ -143,6 +144,7 @@
                 { data: 'statusName', name: 'status.statusName' },
                 { data: 'departmentName', name: 'department.departmentName' },
                 { data: 'zoneName', name: 'zone.zoneName' },
+                { data: 'price', name: 'apply.price' },
                 { data: 'applyDate', name: 'apply.applyDate' },
 
                 { "data": function(data)
