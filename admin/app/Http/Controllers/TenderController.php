@@ -10,6 +10,7 @@ use App\Apply;
 
 use App\Tender;
 use App\TenderType;
+use App\Zone;
 use Illuminate\Http\Request;
 use App\Department;
 
@@ -54,7 +55,14 @@ class TenderController extends Controller
 
 
     public function appliedTenderlist(){
-        return view('AppliedTender.appliedList');
+
+        $departments=Department::get();
+        $tenderTypes=TenderType::get();
+        $zones=Zone::where('fkstatusId',3)->get();
+
+//        return $zones;
+
+        return view('AppliedTender.appliedList',compact('departments','tenderTypes','zones'));
     }
     public function deleteTender(Request $r){
 
@@ -170,18 +178,26 @@ class TenderController extends Controller
 
 
 
-    public function getAppliedTenderlist(){
-
-//        $appliedTender = Apply::select('tender.title', 'tendertype.tenderTypeName' ,'company.name', 'status.statusName', 'department.departmentName', 'apply.*')
+    public function getAppliedTenderlist(Request $r){
 
 
-        $appliedTender = Apply::select('tender.title', 'tendertype.tenderTypeName','company.name', 'status.statusName', 'department.departmentName', 'apply.*')
-
+        $appliedTender = Apply::select('tender.title', 'tendertype.tenderTypeName','company.name', 'status.statusName',
+            'department.departmentName', 'apply.*','zone.zoneName')
                                ->leftJoin('tender', 'tender.tenderId', 'apply.tender_tenderId')
                                ->leftJoin('company', 'company.companyId', 'apply.company_companyId')
                                ->leftJoin('department', 'tender.fkdepartmentId', 'department.departmentId')
                                ->leftJoin('tendertype', 'tendertype.tenderTypeId', 'tender.fkTenderTypeId')
-                               ->leftJoin('status', 'tender.fkstatusId', 'status.statusId');
+                               ->leftJoin('status', 'tender.fkstatusId', 'status.statusId')
+                               ->leftJoin('zone', 'zone.zoneId', 'tender.fkzoneId');
+        if($r->zone){
+            $appliedTender=$appliedTender->where('zone.zoneId',$r->zone);
+        }
+        if($r->department){
+            $appliedTender=$appliedTender->where('department.departmentId',$r->department);
+        }
+        if($r->tenderType){
+            $appliedTender=$appliedTender->where('tender.fkTenderTypeId',$r->tenderType);
+        }
 
 
         $datatables = Datatables::of($appliedTender);

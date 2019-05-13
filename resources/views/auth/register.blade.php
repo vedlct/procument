@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('user.register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -60,6 +60,88 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">Company Name</label>
+
+                            <div class="col-md-6">
+                                <input id="companyName" type="text" class="form-control{{ $errors->has('companyName') ? ' is-invalid' : '' }}" name="companyName" required>
+
+                                @if ($errors->has('companyName'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('companyName') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">Company Address</label>
+
+                            <div class="col-md-6">
+                                <input id="companyAddress" type="text" class="form-control{{ $errors->has('companyAddress') ? ' is-invalid' : '' }}" name="companyAddress" required>
+
+                                @if ($errors->has('companyAddress'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('companyAddress') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">Phone Number</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" required>
+
+                                @if ($errors->has('phone'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">Gender</label>
+
+                            <div class="col-md-6">
+{{--                                <input id="gender" type="text" >--}}
+                                <select class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">male</option>
+                                    <option value="female">female</option>
+                                    <option value="other">other</option>
+                                </select>
+
+                                @if ($errors->has('gender'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">National Id</label>
+
+                            <div class="col-md-6">
+                                <input id="nationalIdcard" type="text" class="form-control{{ $errors->has('nationalIdcard') ? ' is-invalid' : '' }}" name="nationalIdcard" required>
+
+                                @if ($errors->has('nationalIdcard'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('nationalIdcard') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

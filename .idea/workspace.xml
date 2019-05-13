@@ -2,7 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="852cd603-71f5-4b6f-adb8-8d8236bb7b42" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Company.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/CompanyContactPerson.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Department.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TenderController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Tender.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/TenderType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Zone.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/productajax.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/Apply.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/Apply.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/Company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/Department.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/Document.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/Document.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/Http/Controllers/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/Http/Controllers/DepartmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/Http/Controllers/DepartmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/Http/Controllers/TenderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/Http/Controllers/TenderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/Http/Controllers/ZoneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/Http/Controllers/ZoneController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/Status.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/Status.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/Tender.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/Tender.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/TenderType.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/TenderType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/Zone.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/Zone.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/bootstrap/cache/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/bootstrap/cache/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/public/asset/bootstrap-datepicker/css/bootstrap-datepicker.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/public/asset/bootstrap-datepicker/css/bootstrap-datepicker.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/public/asset/bootstrap-datepicker/js/bootstrap-datepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/public/asset/bootstrap-datepicker/js/bootstrap-datepicker.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/public/tenderDoc/11tenderFile.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/admin/public/tenderDoc/11tenderFile.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/resources/views/AppliedTender/appliedList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/resources/views/AppliedTender/appliedList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/resources/views/Company/companyEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/resources/views/Company/companyEdit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/resources/views/Company/companyList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/resources/views/Company/companyList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/resources/views/Department/deptEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/resources/views/Department/deptEdit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/resources/views/Department/deptList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/resources/views/Department/deptList.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/resources/views/Include/top_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/resources/views/Include/top_nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/resources/views/Tender/addTender.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/resources/views/Tender/addTender.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/resources/views/Tender/tenderList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/resources/views/Tender/tenderList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/resources/views/Zone/zoneEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/resources/views/Zone/zoneEdit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/resources/views/Zone/zoneList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/resources/views/Zone/zoneList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jobsearch.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jobsearch.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,17 +55,7 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/resources/views/Include/top_nav.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="157" column="79" lean-forward="true" selection-start-line="157" selection-start-column="79" selection-end-line="157" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,9 +66,9 @@
         <option value="$PROJECT_DIR$/admin/resources/views/Include/css.blade.php" />
         <option value="$PROJECT_DIR$/admin/resources/views/Dashboard/index.blade.php" />
         <option value="$PROJECT_DIR$/admin/app/Http/Controllers/Auth/LoginController.php" />
-        <option value="$PROJECT_DIR$/admin/app/Http/Controllers/DashboardController.php" />
         <option value="$PROJECT_DIR$/admin/routes/web.php" />
         <option value="$PROJECT_DIR$/admin/resources/views/Include/bottom_nav.blade.php" />
+        <option value="$PROJECT_DIR$/admin/app/Http/Controllers/DashboardController.php" />
         <option value="$PROJECT_DIR$/admin/resources/views/Include/top_nav.blade.php" />
       </list>
     </option>
@@ -111,6 +142,14 @@
               <item name="procurement" type="b2602c69:ProjectViewProjectNode" />
               <item name="procurement" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="procurement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="procurement" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -149,12 +188,13 @@
       <option name="presentableId" value="Default" />
       <updated>1557467627082</updated>
       <workItem from="1557467630483" duration="1892000" />
-      <workItem from="1557469572002" duration="1772000" />
+      <workItem from="1557469572002" duration="3497000" />
+      <workItem from="1557723751699" duration="604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3664000" />
+    <option name="totallyTimeSpent" value="5993000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -167,9 +207,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="27" width="1863" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21408916" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2162906" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -224,32 +263,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/resources/views/AppliedTender/appliedList.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="24" selection-end-line="172" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#40#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/TenderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" selection-start-line="15" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/Auth/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -272,17 +287,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/Zone.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/TenderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3933">
+          <caret line="183" column="8" selection-start-line="183" selection-start-column="8" selection-end-line="190" selection-end-column="84" />
+          <folding>
+            <element signature="e#41#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/resources/views/Dashboard/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
+        <state relative-caret-position="2185">
           <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1219">
+          <caret line="53" column="60" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/resources/views/AppliedTender/appliedList.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/Http/Controllers/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+          <folding>
+            <element signature="e#40#54#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/resources/views/Include/top_nav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="157" column="79" lean-forward="true" selection-start-line="157" selection-start-column="79" selection-end-line="157" selection-end-column="79" />
+          <caret line="157" column="79" selection-start-line="157" selection-start-column="79" selection-end-line="157" selection-end-column="79" />
         </state>
       </provider>
     </entry>
