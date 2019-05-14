@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="{{url('public/')}}/css/responsive.css">
     <script src="{{url('public/')}}/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
+
+
     @yield('css')
 </head>
 <body class="jf-home jf-userlogin">
