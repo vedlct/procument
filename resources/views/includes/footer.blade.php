@@ -1,7 +1,10 @@
 <!--************************************
           Footer Start
   *************************************-->
-<footer id="jf-footer" class="jf-footer jf-haslayout">
+<footer id="jf-footer" class="jf-footer jf-haslayout" style="position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;">
     <div class="jf-footeraboutus">
     </div>
     <div class="jf-footerbottom">

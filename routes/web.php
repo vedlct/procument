@@ -23,7 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Register
 Route::post('user/register','UserController@register')->name('user.register');
-
 Route::get ('jobsearch',    'TenderController@getTenders')->name('jobsearch');
 Route::post('tender-filter','TenderController@filterTenders')->name('tender.filter');
 
@@ -36,8 +35,8 @@ Route::get('/mypanel', function () {
 
 Route::group(['middleware' => ['auth']], function () {
 
-    Route::get ('/my-panel',  'MyPanelController@myAppliedTenders') ->name('myApplied.tender');
-    Route::post('save-user', 'UserController@saveUser');
-    Route::put('edit-user', 'UserController@editUser');
+    Route::get ('/my-panel',                     'MyPanelController@myAppliedTenders')        ->name('myApplied.tender');
+    Route::get ('/my-panel/appliedtender/{id}',  'MyPanelController@myAppliedTendersDetails') ->name('myApplied.tender.details');
+
 });
 
