@@ -26,3 +26,18 @@ Route::post('user/register','UserController@register')->name('user.register');
 
 Route::get ('jobsearch',    'TenderController@getTenders')->name('jobsearch');
 Route::post('tender-filter','TenderController@filterTenders')->name('tender.filter');
+
+
+Route::get('/mypanel', function () {
+    return view('myPanel.jobdetails');
+});
+
+//================================== MyPanelController ===============================
+
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::get ('/my-panel',  'MyPanelController@myAppliedTenders') ->name('myApplied.tender');
+    Route::post('save-user', 'UserController@saveUser');
+    Route::put('edit-user', 'UserController@editUser');
+});
+

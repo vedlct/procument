@@ -78,7 +78,7 @@
                                             </ul>-->
                                         </li>
                                         <li class="menu-item-has-children page_item_has_children">
-                                            <a href="javascript:void(0);">MyPanel<em></em>
+                                            <a href="{{ route('myApplied.tender') }}">MyPanel<em></em>
                                             </a>
 <!--                                            <ul class="sub-menu">
                                                 <li><a href="employersgrid.html">Employers Grid</a></li>
