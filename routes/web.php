@@ -25,4 +25,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('user/register','UserController@register')->name('user.register');
 
 Route::get ('jobsearch',    'TenderController@getTenders')->name('jobsearch');
+Route::get ('tender/{id}',    'TenderController@tenderDetails')->name('tender.get');
 Route::post('tender-filter','TenderController@filterTenders')->name('tender.filter');

@@ -69,4 +69,14 @@ class TenderController extends Controller
 
         return view('productajax',compact('tenders','departments','tenderTypes','zones'));
     }
+
+    public function tenderDetails($id){
+        $tender=Tender::leftJoin('tendertype','tendertype.tenderTypeId','tender.fkTenderTypeId')
+            ->leftJoin('department','department.departmentId','tender.fkdepartmentId')
+            ->findOrFail($id);
+
+//        return $tender;
+        return view('tender.tenderDetails',compact('tender'));
+    }
+
 }
