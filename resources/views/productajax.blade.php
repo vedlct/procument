@@ -3,13 +3,13 @@
         <div class="jf-featurejob">
             <div class="jf-companycontent">
                 <div class="jf-companyhead">
-                    <a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">{{$tender->tenderTypeName}}</a>
+                    <a class="jf-btnjobtag jf-fulltimejob" href="{{route('tender.get',['id'=>$tender->tenderId])}}">{{$tender->tenderTypeName}}</a>
                     <div class="jf-rightarea">
-                        <a class="jf-btnjobtag" href="javascript:void(0);">Apply</a>
+                        <a class="jf-btnjobtag" href="{{route('tender.get',['id'=>$tender->tenderId])}}">Apply</a>
                     </div>
                 </div>
                 <div class="jf-companyname">
-                    <h3><a href="javascript:void(0);">{{$tender->title}}</a></h3>
+                    <h3><a href="{{route('tender.get',['id'=>$tender->tenderId])}}">{{$tender->title}}</a></h3>
                     <span>{{$tender->departmentName}}</span>
                 </div>
                 <div class="jf-description">
@@ -28,15 +28,6 @@
 
 <nav class="jf-pagination">
     {!! $tenders->render() !!}
-{{--    <ul>--}}
-{{--        <li class="jf-prevpage"><a href="#"><i class="fa fa-angle-left"></i> Previous</a></li>--}}
-{{--        <li class="jf-active"><a href="#">01</a></li>--}}
-{{--        <li><a href="#">02</a></li>--}}
-{{--        <li><a href="#">03</a></li>--}}
-{{--        <li><a href="#">04</a></li>--}}
-{{--        <li><a href="#">05</a></li>--}}
-{{--        <li><a href="#"></a></li>--}}
-{{--        <li class="jf-nextpage"><a href="#">Next <i class="fa fa-angle-right"></i></a></li>--}}
-{{--    </ul>--}}
+
 </nav>
 
