@@ -2350,7 +2350,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 			matcher( matcherIn, matcherOut, context, xml );
 		}
 
-		// Apply postFilter
+		// ApplyTender postFilter
 		if ( postFilter ) {
 			temp = condense( matcherOut, postMap );
 			postFilter( temp, [], context, xml );
@@ -2523,7 +2523,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 			// makes the latter nonnegative.
 			matchedCount += i;
 
-			// Apply set filters to unmatched elements
+			// ApplyTender set filters to unmatched elements
 			// NOTE: This can be skipped if there are no unmatched elements (i.e., `matchedCount`
 			// equals `i`), unless we didn't visit _any_ elements in the above loop because we have
 			// no element matchers and no seed.
@@ -4559,7 +4559,7 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 	if ( valueParts ) {
 		initialInUnit = +initialInUnit || +initial || 0;
 
-		// Apply relative offset (+=/-=) if specified
+		// ApplyTender relative offset (+=/-=) if specified
 		adjusted = valueParts[ 1 ] ?
 			initialInUnit + ( valueParts[ 1 ] + 1 ) * valueParts[ 2 ] :
 			+valueParts[ 2 ];
@@ -8727,7 +8727,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 			jqXHR[ s.responseFields[ current ] ] = response;
 		}
 
-		// Apply the dataFilter if provided
+		// ApplyTender the dataFilter if provided
 		if ( !prev && isSuccess && s.dataFilter ) {
 			response = s.dataFilter( response, s.dataType );
 		}
@@ -8776,7 +8776,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 					}
 				}
 
-				// Apply converter (if not an equivalence)
+				// ApplyTender converter (if not an equivalence)
 				if ( conv !== true ) {
 
 					// Unless errors are allowed to bubble, catch and return them
@@ -9073,7 +9073,7 @@ jQuery.extend( {
 			s.data = jQuery.param( s.data, s.traditional );
 		}
 
-		// Apply prefilters
+		// ApplyTender prefilters
 		inspectPrefiltersOrTransports( prefilters, s, options, jqXHR );
 
 		// If request was aborted inside a prefilter, stop there
@@ -9493,7 +9493,7 @@ jQuery.ajaxTransport( function( options ) {
 					options.password
 				);
 
-				// Apply custom fields if provided
+				// ApplyTender custom fields if provided
 				if ( options.xhrFields ) {
 					for ( i in options.xhrFields ) {
 						xhr[ i ] = options.xhrFields[ i ];

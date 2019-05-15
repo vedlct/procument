@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use App\Document;
 use App\Status;
 
-use App\Apply;
+use App\ApplyTender;
 
 use App\Tender;
 use App\TenderType;
@@ -174,7 +174,7 @@ class TenderController extends Controller
     public function getAppliedTenderlist(Request $r){
 
 
-        $appliedTender = Apply::select('tender.title', 'tendertype.tenderTypeName','company.name', 'status.statusName',
+        $appliedTender = ApplyTender::select('tender.title', 'tendertype.tenderTypeName','company.name', 'status.statusName',
             'department.departmentName', 'apply.*','zone.zoneName')
                                ->leftJoin('tender', 'tender.tenderId', 'apply.tender_tenderId')
                                ->leftJoin('company', 'company.companyId', 'apply.company_companyId')

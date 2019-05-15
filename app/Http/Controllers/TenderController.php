@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\ApplyTender;
+use App\CompanyContactPerson;
 use App\Department;
 use App\Tender;
 use App\TenderType;
 use App\Zone;
+use Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 class TenderController extends Controller
 {
@@ -71,12 +76,42 @@ class TenderController extends Controller
     }
 
     public function tenderDetails($id){
+        $apply=ApplyTender::where('tender_tenderId',$id)
+            ->where('fkUserId',Auth::user()->id)
+            ->first();
+
+
         $tender=Tender::leftJoin('tendertype','tendertype.tenderTypeId','tender.fkTenderTypeId')
             ->leftJoin('department','department.departmentId','tender.fkdepartmentId')
             ->findOrFail($id);
 
-//        return $tender;
-        return view('tender.tenderDetails',compact('tender'));
+        return view('tender.tenderDetails',compact('tender','apply'));
     }
 
+    public function apply($id,Request $r){
+        $checkApply=ApplyTender::where('tender_tenderId',$id)
+            ->where('fkUserId',Auth::user()->id)
+            ->first();
+
+        if($checkApply){
+            ApplyTender::where('tender_tenderId',$id)
+                ->where('fkUserId',Auth::user()->id)
+                ->update(['price'=>$r->price]);
+        }
+        else {
+            $company = CompanyContactPerson::where('fkuserId', Auth::user()->id)
+                ->first();
+
+            $apply = new ApplyTender();
+            $apply->fkUserId = Auth::user()->id;
+            $apply->price = $r->price;
+            $apply->tender_tenderId = $id;
+            $apply->company_companyId = $company->fkcompanyId;
+            $apply->status_statusId = 5;
+            $apply->save();
+        }
+        Session::flash('message', 'Applied Successfully!');
+
+        return back();
+    }
 }
