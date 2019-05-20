@@ -45,16 +45,10 @@
 <div class="preloader-outer">
     <div class='loader'></div>
 </div>
-<!--************************************
-        Preloader End
-*************************************-->
-<!--************************************
-        Wrapper Start
-*************************************-->
+
+
 <div id="jf-wrapper" class="jf-wrapper">
-    <!--************************************
-            Header Start
-    *************************************-->
+
     <header id="jf-header" class="jf-header jf-haslayout">
 
         <div class="jf-navigationlogoarea">
@@ -68,70 +62,83 @@
                                     <i class="lnr lnr-menu"></i>
                                 </button>
                                 <div class="collapse navbar-collapse jf-navigation" id="navbarNav">
+
                                     <ul>
                                         <li class="menu-item-has-children page_item_has_children">
                                             <a href="javascript:void(0);">Tender</a>
-<!--                                            <ul class="sub-menu">
-                                                <li><a href="{{route('jobsearch')}}">job search</a></li>
-                                                <li><a href="{{route('jobdetails')}}">job Details</a></li>
-                                                <li><a href="jobdetailexternallink.html">job detail external link</a></li>
-                                            </ul>-->
-                                        </li>
-                                        <li class="menu-item-has-children page_item_has_children">
-                                            <a href="{{ route('myApplied.tender') }}">MyPanel<em></em>
-                                            </a>
-<!--                                            <ul class="sub-menu">
-                                                <li><a href="employersgrid.html">Employers Grid</a></li>
-                                                <li><a href="employerslist.html">Employers List</a></li>
-                                                <li><a href="employersdetails.html">Employers Details</a></li>
-                                            </ul>-->
-                                        </li>
-                                        <li class="menu-item-has-children page_item_has_children">
-                                            <a href="{{route('login')}}">
-                                                Login
-                                                <em></em>
-                                            </a>
-<!--                                            <ul class="sub-menu">
-                                                <li><a href="candidatesgrid.html">Candidates Grid</a></li>
-                                                <li><a href="candidateslist.html">Candidates List</a></li>
-                                                <li><a href="candidatesdetails.html">Candidates Detail</a></li>
-                                            </ul>-->
-                                        </li>
-<!--                                        <li class="menu-item-has-children page_item_has_children">
-                                            <a href="javascript:void(0);" class="jf-menubar">
-                                                <span>More</span>
-                                                <img src="{{url('public/')}}/images/nav-more.png" alt="image description">
-                                            </a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item-has-children page_item_has_children">
-                                                    <a href="javascript:void(0);">Home</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="index.html">Home 1</a></li>
-                                                        <li><a href="index2.html">Home 2</a></li>
-                                                        <li><a href="index3.html">Home 3</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-has-children page_item_has_children">
-                                                    <a href="javascript:void(0);">Blog</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="bloggrid.html">Blog Grid</a></li>
-                                                        <li><a href="bloglist.html">Blog List</a></li>
-                                                        <li><a href="blogdetail.html">Blog Detail</a></li>
-                                                        <li><a href="blogdetailshort.html">Blog Detail Short</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-has-children page_item_has_children">
-                                                    <a href="javascript:void(0);">success story</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="successstorygrid.html">success story grid</a></li>
-                                                        <li><a href="successstorylist.html">success story list</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="{{route('login')}}">sign in</a></li>
-                                                <li><a href="{{route('register')}}">sign up</a></li>
-                                                <li><a href="comingsoon.html">Coming Soon</a></li>
+                                           <ul class="sub-menu">
+                                                <li><a href="{{route('jobsearch')}}">Item 1</a></li>
+                                                <li><a href="{{route('jobdetails')}}">Item 2</a></li>
+                                                <li><a href="jobdetailexternallink.html">Item 3</a></li>
                                             </ul>
-                                        </li>-->
+                                        </li>
+                                        <li class="menu-item-has-children page_item_has_children">
+                                            <a href="">MyPanel<em></em>
+                                            </a>
+                                           <ul class="sub-menu">
+                                                <li><a href="{{ route('myApplied.tender') }}">My Applied Tenders</a></li>
+                                                <li><a href="{{ route('myProfile.show') }}">My Profile</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children page_item_has_children">
+
+                                            @if(Auth::check())
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            @else
+                                                <a href="{{route('login')}}">
+                                                    Login
+                                                    <em></em>
+                                                </a>
+                                            @endif
+                                            {{--<ul class="sub-menu">--}}
+                                                {{--<li><a href="candidatesgrid.html">Candidates Grid</a></li>--}}
+                                                {{--<li><a href="candidateslist.html">Candidates List</a></li>--}}
+                                                {{--<li><a href="candidatesdetails.html">Candidates Detail</a></li>--}}
+                                            {{--</ul>--}}
+                                        </li>
+                                       {{--<li class="menu-item-has-children page_item_has_children">--}}
+                                            {{--<a href="javascript:void(0);" class="jf-menubar">--}}
+                                                {{--<span>More</span>--}}
+                                                {{--<img src="{{url('public/')}}/images/nav-more.png" alt="image description">--}}
+                                            {{--</a>--}}
+                                            {{--<ul class="sub-menu">--}}
+                                                {{--<li class="menu-item-has-children page_item_has_children">--}}
+                                                    {{--<a href="javascript:void(0);">Home</a>--}}
+                                                    {{--<ul class="sub-menu">--}}
+                                                        {{--<li><a href="index.html">Home 1</a></li>--}}
+                                                        {{--<li><a href="index2.html">Home 2</a></li>--}}
+                                                        {{--<li><a href="index3.html">Home 3</a></li>--}}
+                                                    {{--</ul>--}}
+                                                {{--</li>--}}
+                                                {{--<li class="menu-item-has-children page_item_has_children">--}}
+                                                    {{--<a href="javascript:void(0);">Blog</a>--}}
+                                                    {{--<ul class="sub-menu">--}}
+                                                        {{--<li><a href="bloggrid.html">Blog Grid</a></li>--}}
+                                                        {{--<li><a href="bloglist.html">Blog List</a></li>--}}
+                                                        {{--<li><a href="blogdetail.html">Blog Detail</a></li>--}}
+                                                        {{--<li><a href="blogdetailshort.html">Blog Detail Short</a></li>--}}
+                                                    {{--</ul>--}}
+                                                {{--</li>--}}
+                                                {{--<li class="menu-item-has-children page_item_has_children">--}}
+                                                    {{--<a href="javascript:void(0);">success story</a>--}}
+                                                    {{--<ul class="sub-menu">--}}
+                                                        {{--<li><a href="successstorygrid.html">success story grid</a></li>--}}
+                                                        {{--<li><a href="successstorylist.html">success story list</a></li>--}}
+                                                    {{--</ul>--}}
+                                                {{--</li>--}}
+                                                {{--<li><a href="{{route('login')}}">sign in</a></li>--}}
+                                                {{--<li><a href="{{route('register')}}">sign up</a></li>--}}
+                                                {{--<li><a href="comingsoon.html">Coming Soon</a></li>--}}
+                                            {{--</ul>--}}
+                                        {{--</li>--}}
                                     </ul>
                                 </div>
                             </nav>

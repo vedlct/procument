@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('user/register','UserController@register')->name('user.register');
 Route::get ('jobsearch',    'TenderController@getTenders')->name('jobsearch');
 Route::get ('tender/{id}',    'TenderController@tenderDetails')->name('tender.get');
-Route::post ('tender/apply/{id}',    'TenderController@apply')->name('tender.apply');
+Route::post('tender/apply/{id}',    'TenderController@apply')->name('tender.apply');
 Route::post('tender-filter','TenderController@filterTenders')->name('tender.filter');
 
 
@@ -39,6 +39,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get ('/my-panel',                     'MyPanelController@myAppliedTenders')        ->name('myApplied.tender');
     Route::get ('/my-panel/appliedtender/{id}',  'MyPanelController@myAppliedTendersDetails') ->name('myApplied.tender.details');
+
+    Route::get ('/my-profile',                   'MyProfileController@myProfile')        ->name('myProfile.show');
+    Route::post('/my-profile/update',            'MyProfileController@updateMyProfile')        ->name('companyInfo.update');
+
 
 });
 
