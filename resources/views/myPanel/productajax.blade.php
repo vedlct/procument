@@ -7,7 +7,7 @@
                 <h4> <span> <b>Tender Type :</b> {{ $tender->tenderTypeName }}</span></h4>
                 <h4> <span> <b>Department :</b> {{ $tender->departmentName }}</span></h4>
                 <div class="jf-viewprofile">
-                    <a href="{{ route('myApplied.tender.details', ['tender_id' => $tender->tenderId]) }}" class="jf-btn">Details</a>
+                    <a href="{{ route('myApplied.tender.details', ['id' => $tender->tenderId]) }}" class="jf-btn">Details</a>
                 </div>
             </div>
         </div>

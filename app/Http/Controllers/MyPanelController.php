@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ApplyTender;
 use App\CompanyContactPerson;
 use App\Tender;
 use Illuminate\Http\Request;
@@ -27,5 +28,20 @@ class MyPanelController extends Controller
         }
 
         return view('myPanel.appliedtender',compact('appliedTenders'));
+    }
+
+    public function myAppliedTendersDetails($id){
+        $apply=ApplyTender::where('tender_tenderId',$id)
+                          ->where('fkUserId',Auth::user()->id)
+                          ->first();
+
+
+        $tender=Tender::leftJoin('tendertype','tendertype.tenderTypeId','tender.fkTenderTypeId')
+                      ->leftJoin('department','department.departmentId','tender.fkdepartmentId')
+                      ->leftJoin('status','status.statusId','tender.fkstatusId')
+                      ->leftJoin('zone','zone.zoneId','tender.fkzoneId')
+                      ->findOrFail($id);
+
+        return view('myPanel.tenderDetails',compact('tender','apply'));
     }
 }

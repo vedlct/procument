@@ -7,6 +7,7 @@ use App\CompanyContactPerson;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class MyProfileController extends Controller
 {
@@ -33,4 +34,35 @@ class MyProfileController extends Controller
 
         return back();
     }
+
+
+    public function addContactPerson(Request $r){
+
+        $r->validate([
+            'Password' => 'required|same:Confirm_Password',
+            'email' => 'required|unique:users,email',
+        ]);
+
+        $user = new User();
+        $user->name = $r->name;
+        $user->email = $r->email;
+        $user->fkusertypeId = 2;
+        $user->password = Hash::make($r->Password);
+        $user->created_at = date("Y-m-d H:i:s");;
+        $user->updated_at = date("Y-m-d H:i:s");;
+        $user->save();
+
+        $contactPerson = new CompanyContactPerson();
+        $contactPerson->name = $r->name;
+        $contactPerson->gender = $r->gender;
+        $contactPerson->nationalIdcard = $r->nid;
+        $contactPerson->email = $r->email;
+        $contactPerson->phone = $r->phone;
+        $contactPerson->fkcompanyId = CompanyContactPerson::where('fkuserId', Auth::user()->id)->first()->fkcompanyId;
+        $contactPerson->fkuserId = $user->id;
+        $contactPerson->save();
+
+        return back();
+    }
+
 }

@@ -37,11 +37,13 @@ Route::get('/mypanel', function () {
 
 Route::group(['middleware' => ['auth']], function () {
 
-    Route::get ('/my-panel',                     'MyPanelController@myAppliedTenders')        ->name('myApplied.tender');
-    Route::get ('/my-panel/appliedtender/{id}',  'MyPanelController@myAppliedTendersDetails') ->name('myApplied.tender.details');
+    Route::get ('/my-panel',                      'MyPanelController@myAppliedTenders')        ->name('myApplied.tender');
+    Route::get ('/my-panel/applied-tender/{id}',  'MyPanelController@myAppliedTendersDetails') ->name('myApplied.tender.details');
 
-    Route::get ('/my-profile',                   'MyProfileController@myProfile')        ->name('myProfile.show');
-    Route::post('/my-profile/update',            'MyProfileController@updateMyProfile')        ->name('companyInfo.update');
+    Route::get ('/my-profile',                    'MyProfileController@myProfile')              ->name('myProfile.show');
+    Route::post('/my-profile/update',             'MyProfileController@updateMyProfile')        ->name('companyInfo.update');
+
+    Route::post('/my-profile/add-contact-person', 'MyProfileController@addContactPerson')       ->name('contactPerson.insert');
 
 
 });
