@@ -7,8 +7,7 @@
             <div class="modal-content">
 
                 <form method="post" action="{{route('tender.apply',['id'=>$tender->tenderId])}}">
-                {{csrf_field()}}
-                <!-- Modal Header -->
+                    {{csrf_field()}}
                     <div class="modal-header">
                         <h4 class="modal-title">Apply For {{$tender->title}}</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -19,7 +18,7 @@
                         <div class="form-group">
                             <label>Your Price</label>
 
-                            <input type="number" name="price" @if($apply)value="{{$apply->price}}" @endif class="form-control">
+                            <input type="number" name="price" @if($apply)value="{{$apply->price}}" @endif class="form-control ml-1">
                         </div>
                         <button class="btn btn-sm btn-success">Apply</button>
                     </div>
@@ -27,7 +26,6 @@
             </div>
         </div>
     </div>
-
 
     <main id="jf-main" class="jf-main jf-haslayout">
         <div class="jf-haslayout jf-sectionspace">
@@ -85,6 +83,14 @@
                                         <li><span>Department:</span><em>{{ $tender->departmentName }}</em></li>
                                     </ul>
                                 </div>
+                                <div class="jf-jobrequirment" style="margin-top: 20px;">
+                                    <div class="jf-title">
+                                        <h2>Tender Description</h2>
+                                    </div>
+                                    <div class="jf-jobdescription">
+                                        {{ $tender->details }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -92,10 +98,9 @@
             </div>
         </div>
     </main>
-
-
-
 @endsection
+
+
 @section('js')
     <script>
         function apply(){

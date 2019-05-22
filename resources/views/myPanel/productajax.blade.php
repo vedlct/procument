@@ -18,10 +18,11 @@
             <li><i class="lnr lnr-tag"></i><span> <b>Status :</b> {{ $tender->statusName }}</span></li>
         </ul>
     </div>
+    {{--{{ $tender->title }}--}}
 @endforeach
 
 
 <nav class="jf-pagination">
-    {!! $appliedTenders->render() !!}
+    {!! $appliedTenders->links()!!}
 </nav>
 

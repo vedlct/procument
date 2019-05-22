@@ -2,8 +2,8 @@
           Footer Start
   *************************************-->
 <footer id="jf-footer" class="jf-footer jf-haslayout" style="position: fixed;right: 0;bottom: 0;left: 0;">
-    <div class="jf-footeraboutus">
-    </div>
+    {{--<div class="jf-footeraboutus">--}}
+    {{--</div>--}}
     <div class="jf-footerbottom">
         <a class="jf-btnscrolltop" href="javascript:void(0);"><i class="fa fa-angle-double-up"></i></a>
         <div class="container">
@@ -47,6 +47,35 @@
 <script src="{{url('public/')}}/js/appear.js"></script>
 <script src="{{url('public/')}}/js/gmap3.js"></script>
 <script src="{{url('public/')}}/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+
+@if(Session::has('success'))
+    <script>
+        {{--toastr.options.timeOut = 3000;--}}
+        {{--toastr.options.closeButton = false;--}}
+        {{--toastr.options.progressBar = false;--}}
+        {{--toastr.options.positionClass = "toast-bottom-right";--}}
+        {{--toastr.success("{{ Session::get('message') }}", {timeOut: 4000})--}}
+
+        Swal.fire({
+            {{--position: 'top-end',--}}
+            {{--type: 'success',--}}
+            {{--title: '{{ Session::get('success') }}',--}}
+            {{--showConfirmButton: false,--}}
+            {{--timer: 3000--}}
+
+            // 'Good job!',
+            // 'You clicked the button!',
+            // 'success'
+
+            type: 'success',
+            title: 'Successful!',
+            text: '{{ Session::get('success') }}',
+            // footer: '<a href>Why do I have this issue?</a>'
+        })
+    </script>
+@endif
 
 @yield('js')
 </body>

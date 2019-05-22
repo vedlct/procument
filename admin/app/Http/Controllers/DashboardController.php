@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Apply;
 use App\ApplyTender;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
@@ -23,7 +24,7 @@ class DashboardController extends Controller
 //                            ->leftJoin('status', 'tender.fkstatusId', 'status.statusId')
 //                            ->whereDate('applyDate', date("Y/m/d"));
 
-        $appliedTender = ApplyTender::select('tender.title', 'tendertype.tenderTypeName','company.name', 'status.statusName',
+        $appliedTender = Apply::select('tender.title', 'tendertype.tenderTypeName','company.name', 'status.statusName',
             'department.departmentName', 'apply.*','zone.zoneName')
             ->leftJoin('tender', 'tender.tenderId', 'apply.tender_tenderId')
             ->leftJoin('company', 'company.companyId', 'apply.company_companyId')

@@ -82,7 +82,7 @@
                                 <select required name="fkstatusId" class="form-control">
                                     <option value="">select Tender Status</option>
                                     @foreach($tenderStatus as $tS)
-                                        <option @if($tS->statusId=$tenderInfo->fkstatusId) selected @endif value="{{$tS->statusId}}">{{$tS->statusName}}</option>
+                                        <option @if($tS->statusId==$tenderInfo->fkstatusId) selected @endif value="{{$tS->statusId}}">{{$tS->statusName}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -95,7 +95,7 @@
                                 <select required name="fkTenderTypeId" class="form-control">
                                     <option value="">select Tender Type</option>
                                     @foreach($tenderType as $tT)
-                                        <option @if($tT->tenderTypeId=$tenderInfo->fkTenderTypeId) selected @endif value="{{$tT->tenderTypeId}}">{{$tT->tenderTypeName}}</option>
+                                        <option @if($tT->tenderTypeId==$tenderInfo->fkTenderTypeId) selected @endif value="{{$tT->tenderTypeId}}">{{$tT->tenderTypeName}}</option>
                                     @endforeach
                                 </select>
                             </div>

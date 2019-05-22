@@ -48,9 +48,9 @@ Route::post('/update-department',   'DepartmentController@updateDepartment') ->n
 Route::post('/delete-department',   'DepartmentController@deleteDepartment') ->name('department.delete');
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth::routes();
+//
+//Route::get('/home', 'HomeController@index')->name('home');
 
 //========================== Tender ====================================
 

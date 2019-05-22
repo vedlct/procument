@@ -14,6 +14,7 @@
                             </div>
                         </div>
 
+
                     </div>
                 </div>
             </div>
@@ -61,10 +62,7 @@
 
         function getData(page){
 
-            // var data = {};
-            // data['filterDEPT'] = $("#filterDEPT").val();
-            // data['filterTYPE'] = $("#filterTYPE").val();
-            // data['filterZONE'] = $("#filterZONE").val();
+
 
             $.ajax(
                 {

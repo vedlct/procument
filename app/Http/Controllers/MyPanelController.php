@@ -19,9 +19,7 @@ class MyPanelController extends Controller
                                 ->leftJoin('department', 'department.departmentId', 'tender.fkdepartmentId')
                                 ->leftJoin('status', 'status.statusId', 'tender.fkstatusId')
                                 ->where('apply.company_companyId', $userCompanyId)
-                                ->paginate(2);
-
-
+                                ->paginate(3);
 
         if ($r->ajax()) {
             return view('myPanel.productajax', compact('appliedTenders'));
@@ -34,7 +32,6 @@ class MyPanelController extends Controller
         $apply=ApplyTender::where('tender_tenderId',$id)
                           ->where('fkUserId',Auth::user()->id)
                           ->first();
-
 
         $tender=Tender::leftJoin('tendertype','tendertype.tenderTypeId','tender.fkTenderTypeId')
                       ->leftJoin('department','department.departmentId','tender.fkdepartmentId')

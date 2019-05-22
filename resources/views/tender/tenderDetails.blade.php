@@ -21,9 +21,21 @@
                    <div class="form-group">
                        <label>Your Price</label>
 
-                       <input type="number" name="price" @if($apply)value="{{$apply->price}}" @endif class="form-control">
+                       @if(Auth::check())
+                           <input type="number" name="price" @if($apply)value="{{$apply->price}}" @endif class="form-control ml-1">
+                       @else
+                           <input type="number" name="price" class="form-control">
+                       @endif
+
                    </div>
-                    <button class="btn btn-sm btn-success">Apply</button>
+                    @if(Auth::check())
+                        @if($apply)
+                            <button class="btn btn-sm btn-success">Apply Again</button>
+                        @else
+                            <button class="btn btn-sm btn-success">Apply</button>
+                        @endif
+                    @endif
+
                 </div>
                 </form>
             </div>
@@ -32,9 +44,7 @@
 
 
     <main id="jf-main" class="jf-main jf-haslayout">
-        <!--************************************
-                Blog Grid Start
-        *************************************-->
+
         <div class="jf-haslayout jf-sectionspace">
             <div class="container">
                 <div class="row">
@@ -47,12 +57,12 @@
 
                                         <div class="jf-companyname">
                                             <h3><a href="javascript:void(0);">{{$tender->title}}</a></h3>
-                                            <span>{{$tender->tenderTypeName}}</span>
+                                            {{--<span>{{$tender->tenderTypeName}}</span>--}}
                                             <ul class="jf-postarticlemetavthree">
                                                 <li>
                                                     <a href="javascript:void(0);">
                                                         <i class="lnr lnr-calendar-full"></i>
-                                                        <span>Posted {{$tender->published_date}}</span>
+                                                        <span>Tender Posted {{$tender->published_date}}</span>
                                                     </a>
                                                 </li>
 
@@ -61,107 +71,58 @@
                                     </div>
                                     <div class="jf-jobapplybtnlike">
                                         <div class="jf-likebtnbox">
-                                            @if($apply)
 
-                                                <a onclick="apply()" class="jf-btn jf-active">Bid Again</a>
+                                            @if(Auth::check())
+                                                @if($apply)
+                                                    <a onclick="apply()" class="jf-btn jf-active">Bid Again</a>
 
-                                                <p><small style="display: inline-flex;">You have already applied this tender</small></p>
+                                                    <p><small style="display: inline-flex;">You have already applied this tender</small></p>
+                                                @else
+                                                    <a onclick="apply()" class="jf-btn jf-active">Apply Now</a>
+                                                @endif
                                             @else
-                                                <a onclick="apply()" class="jf-btn jf-active">Apply Now</a>
+                                                {{--<a onclick="apply()" class="jf-btn jf-active">Apply Now</a>--}}
+                                                <a class="jf-btn jf-active" href="{{ route('tender.apply.log_in_first', ['id'=>$tender->tenderId]) }}">Log in to apply</a>
                                             @endif
+
                                         </div>
-                                        <ul class="jf-socialiconssimple">
-                                            <li class="jf-sharejob"><span>Share this job</span></li>
-                                            <li class="jf-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook-f"></i></a></li>
-                                            <li class="jf-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
-                                            <li class="jf-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
-                                            <li class="jf-clone"><a href="javascript:void(0);"><i class="far fa-clone"></i></a></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="jf-jobdetails">
-                                <div class="jf-jobdetaildescription">
-                                    <div class="jf-title">
-                                        <h2>Job Description</h2>
-                                    </div>
-                                    <div class="jf-jobdescription">
-                                        <span>
-                                            {{$tender->details}}
-                                        </span>
-
-                                    </div>
-                                </div>
-                                <div class="jf-jobdetailinfo">
-                                    <div class="jf-title">
-                                        <h2>Job Description</h2>
-                                    </div>
-                                    <ul>
-                                        <li><span>Salary Range:</span><em>$40,000 - $45,000</em></li>
-                                        <li><span>Industry:</span><em>Banking/Financial Services</em></li>
-                                        <li><span>Functional Area:</span><em>Computer Networking</em></li>
-                                        <li><span>Total Positions:</span><em>1 Post</em></li>
-                                        <li><span>Job Shift:</span><em>First Shift (Day)</em></li>
-                                        <li><span>Job Type:</span><em>Full Time/Permanent</em></li>
-                                        <li><span>Job Location:</span><em>Houston, U.S.A</em></li>
-                                        <li><span>Gender:</span><em>Male</em></li>
-                                        <li><span>Minimum Education:</span><em>BA/BS</em></li>
-                                        <li><span>Career Level:</span><em>Experienced Professional</em></li>
-                                        <li><span>Experience:</span><em>2 Years - 10 Years</em></li>
-                                        <li><span>Apply Before:</span><em>Jul 27, 2019</em></li>
-                                        <li><span>Posting Date:</span><em>Jul 27, 2019</em></li>
-                                    </ul>
-                                </div>
-                                <div class="jf-jobrequirment">
-                                    <div class="jf-title">
-                                        <h2>Job Requirment</h2>
-                                    </div>
-                                    <div class="jf-jobdescription">
-                                        <span>Labois niisie ut commodo consequat aute</span>
-                                        <span>Irure dolor in reprehenderit ineuptate</span>
-                                        <span>Velit esse cillum dolore eu fugiat nulla pariatur</span>
-                                        <div class="jf-description">
-                                            <p>Self Motivated, Energetic, positive, creative, multitasking, Proven English Speaking skills, Good listening skills, Problem solving Skills</p>
+                                <div class="jf-jobdetails">
+                                    <div class="jf-jobdetailinfo">
+                                        <div class="jf-title">
+                                            <h2>Tender Information</h2>
                                         </div>
+                                        <ul>
+                                            <li><span>Title:</span><em>{{ $tender->title }}</em></li>
+                                            <li><span>Start Date:</span><em>{{ $tender->startdate }}</em></li>
+                                            <li><span>End Date:</span><em>{{ $tender->enddate }}</em></li>
+                                            <li><span>Publish Date:</span><em>{{ $tender->published_date }}</em></li>
+                                            <li><span>Status:</span><em>{{ $tender->statusName }}</em></li>
+                                            <li><span>Price:</span><em>{{ $tender->price }}</em></li>
+                                            <li><span>Zone:</span><em>{{ $tender->zoneName }}</em></li>
+                                            <li><span>Tender Type:</span><em>{{ $tender->tenderTypeName }}</em></li>
+                                            <li><span>Department:</span><em>{{ $tender->departmentName }}</em></li>
+                                        </ul>
                                     </div>
                                 </div>
-
-                                <div class="jf-jobapply">
-                                    <div class="jf-jobapplynowbtn">
-                                        @if($apply)
-
-                                            <a onclick="apply()" class="jf-btn jf-active">Bid Again</a>
-
-                                            <p><small style="display: inline-flex;">You have already applied this tender</small></p>
-                                        @else
-                                            <a onclick="apply()" class="jf-btn jf-active">Apply Now</a>
-                                        @endif
-
+                                <div class="jf-jobrequirment" style="margin-top: 20px;">
+                                    <div class="jf-title">
+                                        <h2>Tender Description</h2>
                                     </div>
-                                    <ul class="jf-socialiconssimple">
-                                        <li class="jf-sharejob"><span>Share this job</span></li>
-                                        <li class="jf-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook-f"></i></a></li>
-                                        <li class="jf-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="jf-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <li class="jf-clone"><a href="javascript:void(0);"><i class="far fa-clone"></i></a></li>
-                                    </ul>
+                                    <div class="jf-jobdescription">
+                                        {{ $tender->details }}
+                                    </div>
                                 </div>
                             </div>
-
-
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
         </div>
-        <!--************************************
-                Blog Grid End
-        *************************************-->
     </main>
-
 
 
 @endsection

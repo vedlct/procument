@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                        <strong class="jf-logo"><a href="index.html"><img src="{{url('public/')}}/images/logoo.png" alt="company logo here"></a></strong>
+                        <strong class="jf-logo"><a href="{{ route('tenders.show') }}"><img src="{{url('public/')}}/images/logoo.png" alt="company logo here"></a></strong>
                         <div class="jf-rightarea">
                             <nav id="jf-nav" class="jf-nav navbar-expand-lg navbar-toggleable-sm">
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,12 +65,12 @@
 
                                     <ul>
                                         <li class="menu-item-has-children page_item_has_children">
-                                            <a href="javascript:void(0);">Tender</a>
-                                           <ul class="sub-menu">
-                                                <li><a href="{{route('jobsearch')}}">Item 1</a></li>
-                                                <li><a href="{{route('jobdetails')}}">Item 2</a></li>
-                                                <li><a href="jobdetailexternallink.html">Item 3</a></li>
-                                            </ul>
+                                            <a href="{{ route('tenders.show') }}">Tender</a>
+                                           {{--<ul class="sub-menu">--}}
+                                                {{--<li><a href="{{route('jobsearch')}}">Item 1</a></li>--}}
+                                                {{--<li><a href="{{route('jobdetails')}}">Item 2</a></li>--}}
+                                                {{--<li><a href="jobdetailexternallink.html">Item 3</a></li>--}}
+                                            {{--</ul>--}}
                                         </li>
                                         <li class="menu-item-has-children page_item_has_children">
                                             <a href="">MyPanel<em></em>

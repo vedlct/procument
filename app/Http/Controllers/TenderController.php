@@ -19,7 +19,7 @@ class TenderController extends Controller
         $tenders=Tender::where('fkstatusId',5)
             ->leftJoin('tendertype','tendertype.tenderTypeId','tender.fkTenderTypeId')
             ->leftJoin('department','department.departmentId','tender.fkdepartmentId')
-            ->paginate(2);
+            ->paginate(5);
 
         if ($r->filter['filterDEPT'] != null){
             $tenders = $tenders->where('fkdepartmentId',$r->filter['filterDEPT']);
@@ -38,10 +38,10 @@ class TenderController extends Controller
         $zones=Zone::where('fkstatusId',3)->get();
 
         if ($r->ajax()) {
-            return view('productajax', compact('tenders','departments','tenderTypes','zones'));
+            return view('tender/productajax', compact('tenders','departments','tenderTypes','zones'));
         }
 
-        return view('jobsearch',compact('tenders','departments','tenderTypes','zones'));
+        return view('tender.tenders',compact('tenders','departments','tenderTypes','zones'));
     }
 
     public function filterTenders(Request $r){
@@ -72,20 +72,31 @@ class TenderController extends Controller
 //            return view('productajax', compact('tenders','departments','tenderTypes','zones'));
 //        }
 
-        return view('productajax',compact('tenders','departments','tenderTypes','zones'));
+        return view('tender/productajax',compact('tenders','departments','tenderTypes','zones'));
     }
 
     public function tenderDetails($id){
-        $apply=ApplyTender::where('tender_tenderId',$id)
-            ->where('fkUserId',Auth::user()->id)
-            ->first();
-
 
         $tender=Tender::leftJoin('tendertype','tendertype.tenderTypeId','tender.fkTenderTypeId')
             ->leftJoin('department','department.departmentId','tender.fkdepartmentId')
+            ->leftJoin('zone','zone.zoneId','tender.fkzoneId')
+            ->leftJoin('status','status.statusId','tender.fkstatusId')
             ->findOrFail($id);
 
-        return view('tender.tenderDetails',compact('tender','apply'));
+        if(Auth::check())
+        {
+            $apply=ApplyTender::where('tender_tenderId',$id)
+                ->where('fkUserId',Auth::user()->id)
+                ->first();
+
+            return view('tender.tenderDetails',compact('tender','apply'));
+        }
+        else
+        {
+            return view('tender.tenderDetails',compact('tender'));
+        }
+
+
     }
 
     public function apply($id,Request $r){
@@ -108,9 +119,10 @@ class TenderController extends Controller
             $apply->tender_tenderId = $id;
             $apply->company_companyId = $company->fkcompanyId;
             $apply->status_statusId = 5;
+            $apply->applyDate = date("Y-m-d H:i:s");
             $apply->save();
         }
-        Session::flash('message', 'Applied Successfully!');
+        Session::flash('success', 'Applied Successfully!');
 
         return back();
     }

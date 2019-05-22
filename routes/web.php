@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('tenders.show');
 });
 
 Route::view('jobdetails','jobdetails')->name('jobdetails');
@@ -22,11 +22,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Register
-Route::post('user/register','UserController@register')->name('user.register');
-Route::get ('jobsearch',    'TenderController@getTenders')->name('jobsearch');
-Route::get ('tender/{id}',    'TenderController@tenderDetails')->name('tender.get');
+Route::post('user/register',        'UserController@register')->name('user.register');
+
+
+Route::get ('tenders',              'TenderController@getTenders')->name('tenders.show');
+Route::get ('tender/{id}',          'TenderController@tenderDetails')->name('tender.get');
 Route::post('tender/apply/{id}',    'TenderController@apply')->name('tender.apply');
-Route::post('tender-filter','TenderController@filterTenders')->name('tender.filter');
+Route::post('tender-filter',        'TenderController@filterTenders')->name('tender.filter');
 
 
 Route::get('/mypanel', function () {
@@ -45,6 +47,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('/my-profile/add-contact-person', 'MyProfileController@addContactPerson')       ->name('contactPerson.insert');
 
+    Route::get ('apply/tender/{id}',          'TenderController@tenderDetails')->name('tender.apply.log_in_first');
 
 });
 
